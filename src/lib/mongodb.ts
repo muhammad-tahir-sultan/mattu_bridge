@@ -1,0 +1,35 @@
+import mongoose from "mongoose";
+
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/mattu_bridge";
+
+interface MongooseCache {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
+}
+
+declare global {
+  // eslint-disable-next-line no-var
+  var mongooseCache: MongooseCache | undefined;
+}
+
+const cached: MongooseCache = global.mongooseCache || { conn: null, promise: null };
+if (!global.mongooseCache) {
+  global.mongooseCache = cached;
+}
+
+export async function connectDB() {
+  if (cached.conn) {
+    return cached.conn;
+  }
+  if (!cached.promise) {
+    const opts = { bufferCommands: false, serverSelectionTimeoutMS: 5000 };
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((m) => m);
+  }
+  try {
+    cached.conn = await cached.promise;
+  } catch (err) {
+    cached.promise = null;
+    throw err;
+  }
+  return cached.conn;
+}
