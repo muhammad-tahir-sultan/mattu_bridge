@@ -304,7 +304,7 @@ export default function StudentEnquiryForm() {
               type="tel"
               value={formData.whatsapp}
               onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-              placeholder="+49 123 456789"
+              placeholder="+49 15 905 664 369"
               className="input-field"
             />
           </div>

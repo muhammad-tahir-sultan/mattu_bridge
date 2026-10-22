@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Cookie, Shield, Check, Settings, X } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
+  const { t, locale } = useLanguage();
 
   useEffect(() => {
     const consent = localStorage.getItem("mattu_cookie_consent");
@@ -54,36 +56,36 @@ export default function CookieBanner() {
               </div>
               <div className="text-sm">
                 <p className="font-semibold text-gray-900">
-                  Privacy &amp; Cookie Consent
+                  {t.cookies.title}
                 </p>
                 <p className="mt-1 text-gray-600 leading-relaxed">
-                  We use strictly necessary cookies to ensure the proper functionality of our website. Optional analytical cookies are disabled by default under GDPR rules. You can learn more in our{" "}
+                  {t.cookies.desc}{" "}
                   <Link href="/cookie-policy" className="text-primary-700 underline font-medium">
-                    Cookie Policy
+                    {t.cookies.cookiePolicyLink}
                   </Link>{" "}
-                  and{" "}
+                  &amp;{" "}
                   <Link href="/privacy-policy" className="text-primary-700 underline font-medium">
-                    Datenschutzerklärung
+                    {locale === "de" ? "Datenschutzerklärung" : "Privacy Policy"}
                   </Link>.
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2.5 pt-2 md:pt-0">
+            <div className="flex flex-wrap items-center gap-2.5 pt-2 md:pt-0 flex-shrink-0">
               <button
                 type="button"
                 onClick={() => setShowPreferences(true)}
                 className="btn-secondary !py-2 !px-3.5 text-xs font-semibold"
               >
                 <Settings className="h-3.5 w-3.5" />
-                Customize
+                {t.cookies.customize}
               </button>
               <button
                 type="button"
                 onClick={handleAcceptEssential}
                 className="btn-secondary !py-2 !px-3.5 text-xs font-semibold"
               >
-                Essential Only
+                {t.cookies.essentialOnly}
               </button>
               <button
                 type="button"
@@ -91,7 +93,7 @@ export default function CookieBanner() {
                 className="btn-primary !py-2 !px-4 text-xs font-semibold"
               >
                 <Check className="h-3.5 w-3.5" />
-                Accept All
+                {t.cookies.acceptAll}
               </button>
             </div>
           </div>
@@ -100,12 +102,13 @@ export default function CookieBanner() {
             <div className="flex items-center justify-between border-b border-gray-100 pb-3">
               <h3 className="font-display text-lg font-bold text-gray-900 flex items-center gap-2">
                 <Shield className="h-5 w-5 text-primary-700" />
-                Cookie Preferences
+                {t.cookies.customize}
               </h3>
               <button
                 type="button"
                 onClick={() => setShowPreferences(false)}
                 className="rounded-lg p-1 text-gray-400 hover:text-gray-600"
+                aria-label={t.cookies.close}
               >
                 <X className="h-5 w-5" />
               </button>
@@ -115,24 +118,24 @@ export default function CookieBanner() {
               <div className="flex items-center justify-between rounded-xl bg-gray-50 p-3.5">
                 <div>
                   <p className="text-sm font-semibold text-gray-900">
-                    Strictly Necessary Cookies
+                    {t.cookies.essentialTitle}
                   </p>
                   <p className="text-xs text-gray-500">
-                    Required for security, session state, and navigation. Cannot be disabled.
+                    {t.cookies.essentialDesc}
                   </p>
                 </div>
                 <span className="text-xs font-bold uppercase tracking-wider text-primary-700 bg-primary-100 px-2.5 py-1 rounded">
-                  Always Active
+                  {locale === "de" ? "Immer aktiv" : "Always Active"}
                 </span>
               </div>
 
               <div className="flex items-center justify-between rounded-xl border border-gray-200 p-3.5">
                 <div>
                   <p className="text-sm font-semibold text-gray-900">
-                    Analytics &amp; Performance Cookies
+                    {t.cookies.analyticsTitle}
                   </p>
                   <p className="text-xs text-gray-500">
-                    Help us understand user traffic anonymously to improve user guidance.
+                    {t.cookies.analyticsDesc}
                   </p>
                 </div>
                 <label className="relative inline-flex items-center cursor-pointer">
@@ -153,14 +156,14 @@ export default function CookieBanner() {
                 onClick={() => setShowPreferences(false)}
                 className="btn-secondary !py-2 !px-4 text-xs font-semibold"
               >
-                Cancel
+                {locale === "de" ? "Abbrechen" : "Cancel"}
               </button>
               <button
                 type="button"
                 onClick={handleSavePreferences}
                 className="btn-primary !py-2 !px-4 text-xs font-semibold"
               >
-                Save Preferences
+                {t.cookies.savePreferences}
               </button>
             </div>
           </div>

@@ -1,11 +1,16 @@
+"use client";
+
 import { Quote, Sparkles } from "lucide-react";
-import { directorMessage } from "@/data/content";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface DirectorMessageProps {
   id?: string;
 }
 
 export default function DirectorMessage({ id = "director-message" }: DirectorMessageProps) {
+  const { t } = useLanguage();
+  const messageData = t.directorMessage;
+
   return (
     <section id={id} className="section-padding bg-gradient-to-b from-white via-primary-50/50 to-white">
       <div className="section-container">
@@ -22,16 +27,16 @@ export default function DirectorMessage({ id = "director-message" }: DirectorMes
                 </div>
                 <div>
                   <p className="heading-eyebrow !text-primary-600 mb-0.5">
-                    Leadership &amp; Vision
+                    {messageData.eyebrow}
                   </p>
                   <h2 className="font-display text-2xl font-bold text-gray-900 md:text-3xl">
-                    {directorMessage.heading}
+                    {messageData.heading}
                   </h2>
                 </div>
               </div>
 
               <div className="space-y-4 text-base leading-relaxed text-gray-700 md:text-lg">
-                {directorMessage.paragraphs.map((p, idx) => (
+                {messageData.paragraphs.map((p, idx) => (
                   <p key={idx} className={idx === 0 ? "font-semibold text-gray-900" : ""}>
                     {p}
                   </p>
@@ -42,16 +47,16 @@ export default function DirectorMessage({ id = "director-message" }: DirectorMes
               <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between flex-wrap gap-4">
                 <div>
                   <div className="font-display text-xl font-bold text-gray-950">
-                    {directorMessage.signOff}
+                    {messageData.signOff}
                   </div>
                   <div className="text-sm font-medium text-primary-700">
-                    {directorMessage.title}
+                    {messageData.title}
                   </div>
                 </div>
 
                 <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-4 py-1.5 text-xs text-gray-600">
                   <Sparkles className="h-3.5 w-3.5 text-primary-600" />
-                  <span>Bridging Education, Employment &amp; Cooperation</span>
+                  <span>{messageData.badge}</span>
                 </div>
               </div>
             </div>

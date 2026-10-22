@@ -7,26 +7,73 @@ import {
   Menu,
   X,
   ChevronDown,
-  GraduationCap,
-  Briefcase,
-  Globe,
   ArrowRight,
-  PhoneCall,
   UserCheck,
   Building,
 } from "lucide-react";
 import Logo from "./Logo";
-import { navLinks } from "@/data/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "@/context/LanguageContext";
 import { siteConfig } from "@/data/content";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
+  const { t, locale } = useLanguage();
 
   const toggleDropdown = (label: string) => {
     setOpenDropdown(openDropdown === label ? null : label);
   };
+
+  const localizedNavLinks = [
+    { label: t.nav.home, href: "/" },
+    { label: t.nav.about, href: "/about" },
+    {
+      label: t.nav.education,
+      href: "/education",
+      children: [
+        {
+          label: t.nav.studyOpportunities,
+          href: "/education",
+          description: t.nav.studyOpportunitiesDesc,
+        },
+        {
+          label: t.nav.submitStudyEnquiry,
+          href: "/education#enquiry-form",
+          description: t.nav.submitStudyEnquiryDesc,
+        },
+      ],
+    },
+    {
+      label: t.nav.jobs,
+      href: "/jobs",
+      children: [
+        {
+          label: t.nav.recruitmentOverview,
+          href: "/jobs",
+          description: t.nav.recruitmentOverviewDesc,
+        },
+        {
+          label: t.common.registerJobSeeker,
+          href: "/jobs/job-seeker-registration",
+          description: t.nav.registerJobSeekerDesc,
+        },
+        {
+          label: t.common.postJob,
+          href: "/jobs/employer-inquiry",
+          description: t.nav.postJobDesc,
+        },
+        {
+          label: t.nav.jobListings,
+          href: "/jobs/listings",
+          description: t.nav.jobListingsDesc,
+        },
+      ],
+    },
+    { label: t.nav.events, href: "/events" },
+    { label: t.nav.contact, href: "/contact" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur-md transition-all">
@@ -35,21 +82,24 @@ export default function Navbar() {
         <div className="w-full max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-2 whitespace-nowrap">
             <span className="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
-            <span className="whitespace-nowrap">Germany-Based Consultancy · Connecting Europe &amp; Beyond</span>
+            <span className="whitespace-nowrap">{t.common.topBannerText}</span>
           </div>
-          <div className="hidden sm:flex items-center gap-4 text-gray-300 whitespace-nowrap">
+
+          <div className="flex items-center gap-4 text-gray-300 whitespace-nowrap">
+            <LanguageSwitcher variant="banner" />
+            <span className="text-gray-700 hidden sm:inline">|</span>
             <a
               href={`mailto:${siteConfig.email}`}
-              className="hover:text-white transition-colors whitespace-nowrap"
+              className="hidden sm:inline hover:text-white transition-colors whitespace-nowrap"
             >
               {siteConfig.email}
             </a>
-            <span className="text-gray-600">|</span>
+            <span className="text-gray-700 hidden sm:inline">|</span>
             <Link
               href="/admin"
               className="text-primary-300 hover:text-white transition-colors whitespace-nowrap"
             >
-              Admin Portal
+              {t.common.adminPortal}
             </Link>
           </div>
         </div>
@@ -61,7 +111,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2 flex-shrink-0">
-          {navLinks
+          {localizedNavLinks
             .filter((item) => item.href !== "/contact")
             .map((item) => {
               const isActive =
@@ -71,7 +121,7 @@ export default function Navbar() {
               if (item.children) {
                 return (
                   <div
-                    key={item.label}
+                    key={item.href}
                     className="relative group flex-shrink-0"
                     onMouseEnter={() => setOpenDropdown(item.label)}
                     onMouseLeave={() => setOpenDropdown(null)}
@@ -94,7 +144,7 @@ export default function Navbar() {
                       <div className="rounded-xl border border-gray-100 bg-white p-2 shadow-xl ring-1 ring-black/5">
                         {item.children.map((sub) => (
                           <Link
-                            key={sub.label}
+                            key={sub.href + sub.label}
                             href={sub.href}
                             className="block rounded-lg p-2.5 hover:bg-primary-50 transition-colors"
                           >
@@ -116,7 +166,7 @@ export default function Navbar() {
 
               return (
                 <Link
-                  key={item.label}
+                  key={item.href}
                   href={item.href}
                   className={`whitespace-nowrap inline-flex items-center rounded-lg px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold transition-colors flex-shrink-0 ${
                     isActive
@@ -132,29 +182,34 @@ export default function Navbar() {
 
         {/* Action CTAs Desktop */}
         <div className="hidden lg:flex items-center gap-2 xl:gap-3 flex-shrink-0">
+          <LanguageSwitcher variant="pill" />
+
           <Link
             href="/jobs/job-seeker-registration"
             className="whitespace-nowrap text-xs xl:text-sm font-semibold text-gray-700 hover:text-primary-700 px-2.5 py-2 transition-colors flex-shrink-0"
           >
-            <span className="whitespace-nowrap">Job Seeker Registration</span>
+            <span className="whitespace-nowrap">{t.common.registerJobSeeker}</span>
           </Link>
           <Link
             href="/contact"
             className="btn-primary !py-2.5 !px-4 text-xs xl:text-sm whitespace-nowrap flex-shrink-0 inline-flex items-center gap-1.5 shadow-sm"
           >
-            <span className="whitespace-nowrap">Contact Us</span>
+            <span className="whitespace-nowrap">{t.common.contactUs}</span>
             <ArrowRight className="h-3.5 w-3.5 flex-shrink-0" />
           </Link>
         </div>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Controls */}
         <div className="flex lg:hidden items-center gap-2">
+          <LanguageSwitcher variant="pill" />
+
           <Link
             href="/contact"
-            className="btn-primary !py-1.5 !px-3 text-xs"
+            className="btn-primary !py-1.5 !px-2.5 text-xs whitespace-nowrap"
           >
-            Contact
+            {locale === "de" ? "Kontakt" : "Contact"}
           </Link>
+
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -173,11 +228,18 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-b border-gray-200 bg-white px-4 pt-2 pb-6 shadow-xl animate-in slide-in-from-top-4 duration-200">
+          <div className="flex items-center justify-between pb-3 mb-3 border-b border-gray-100">
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
+              {t.nav.language}:
+            </span>
+            <LanguageSwitcher variant="pill" />
+          </div>
+
           <div className="space-y-1">
-            {navLinks.map((item) => {
+            {localizedNavLinks.map((item) => {
               const isActive = pathname === item.href;
               return (
-                <div key={item.label} className="py-1">
+                <div key={item.href} className="py-1">
                   <Link
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
@@ -193,7 +255,7 @@ export default function Navbar() {
                     <div className="ml-4 mt-1 space-y-1 border-l-2 border-primary-100 pl-3">
                       {item.children.map((sub) => (
                         <Link
-                          key={sub.label}
+                          key={sub.href}
                           href={sub.href}
                           onClick={() => setMobileMenuOpen(false)}
                           className="block rounded-md py-1.5 text-sm text-gray-600 hover:text-primary-700"
@@ -215,7 +277,7 @@ export default function Navbar() {
               className="btn-secondary w-full justify-center !py-2.5 text-sm"
             >
               <UserCheck className="h-4 w-4" />
-              Register as Job Seeker
+              {t.common.registerJobSeeker}
             </Link>
             <Link
               href="/jobs/employer-inquiry"
@@ -223,14 +285,14 @@ export default function Navbar() {
               className="btn-secondary w-full justify-center !py-2.5 text-sm"
             >
               <Building className="h-4 w-4" />
-              Post a Job / Employer Enquiry
+              {t.common.postJob}
             </Link>
             <Link
               href="/admin"
               onClick={() => setMobileMenuOpen(false)}
               className="text-center text-xs text-gray-500 py-1 hover:text-primary-700"
             >
-              Admin Dashboard
+              {t.common.adminPortal}
             </Link>
           </div>
         </div>

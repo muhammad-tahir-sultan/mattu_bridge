@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import { LanguageProvider } from "@/context/LanguageContext";
 import { siteConfig } from "@/data/content";
 
 const inter = Inter({
@@ -28,10 +30,12 @@ export const metadata: Metadata = {
   keywords: [
     "Mattu Bridge",
     "Education Consultancy Germany",
+    "Bildungsberatung Deutschland",
     "Study in Europe",
     "Study Abroad Consultant",
     "Ausbildung Germany",
     "Employment Placement Germany",
+    "Personalvermittlung Deutschland",
     "Recruitment Agency Germany",
     "International Events Europe",
     "Human Rights Seminars",
@@ -56,10 +60,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col font-sans text-gray-900 bg-white antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <CookieBanner />
+        <LanguageProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <FloatingWhatsApp />
+          <CookieBanner />
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
-import { Mail, Phone, MapPin, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { Mail, MessageCircle, ShieldCheck } from "lucide-react";
 import Logo from "./Logo";
-import { siteConfig, complianceDisclaimer } from "@/data/content";
-import { footerLinks } from "@/data/navigation";
+import { siteConfig } from "@/data/content";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
+  const { t, locale } = useLanguage();
+
   return (
     <footer className="border-t border-primary-900 bg-primary-950 text-white">
       {/* Upper Footer: Main columns */}
@@ -14,17 +18,12 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-6">
             <Logo isDark={true} />
             <p className="text-sm leading-relaxed text-gray-300 max-w-sm">
-              Mattu Bridge brings together educational consultancy, employment
-              placement and recruitment, and international educational and
-              social initiatives through one professional platform.
+              {t.footer.description}
             </p>
             <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-xs text-gray-300">
               <div className="flex items-start gap-2.5">
                 <ShieldCheck className="h-5 w-5 text-primary-300 flex-shrink-0 mt-0.5" />
-                <p>
-                  Operating in Germany with a strict commitment to transparent
-                  communication, GDPR compliance, and verifiable services.
-                </p>
+                <p>{t.footer.gdprNotice}</p>
               </div>
             </div>
           </div>
@@ -32,68 +31,161 @@ export default function Footer() {
           {/* Core Services */}
           <div>
             <h4 className="font-display text-base font-semibold text-white tracking-wide mb-4">
-              Core Services
+              {t.footer.coreServices}
             </h4>
             <ul className="space-y-2.5 text-sm">
-              {footerLinks.pillars.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-300 hover:text-white hover:underline transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/education"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.footer.educationLink}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/jobs"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.footer.jobsLink}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/jobs/listings"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.nav.jobListings}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/events"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.footer.eventsLink}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/jobs/job-seeker-registration"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.footer.jobSeekerLink}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/jobs/employer-inquiry"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.footer.employerLink}
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Organization & About */}
           <div>
             <h4 className="font-display text-base font-semibold text-white tracking-wide mb-4">
-              Organization
+              {t.footer.organization}
             </h4>
             <ul className="space-y-2.5 text-sm">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-300 hover:text-white hover:underline transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.footer.aboutLink}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about#director-message"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.footer.directorLink}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.footer.contactLink}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/admin"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.common.adminPortal}
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Legal & Compliance (German DDG / GDPR) */}
           <div>
             <h4 className="font-display text-base font-semibold text-white tracking-wide mb-4">
-              Legal &amp; Compliance
+              {t.footer.legalCompliance}
             </h4>
             <ul className="space-y-2.5 text-sm">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-300 hover:text-white hover:underline transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.footer.privacy}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/impressum"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.footer.impressum}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.footer.terms}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/cookie-policy"
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  {t.footer.cookiePolicy}
+                </Link>
+              </li>
             </ul>
 
-            <div className="mt-6 pt-4 border-t border-white/10">
-              <div className="text-xs text-gray-400 mb-1">Official Contact:</div>
+            <div className="mt-6 pt-4 border-t border-white/10 space-y-2">
+              <div className="text-xs text-gray-400">{t.footer.officialContact}:</div>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="inline-flex items-center gap-1.5 text-sm text-primary-300 hover:text-white"
+                className="inline-flex items-center gap-1.5 text-xs text-primary-300 hover:text-white transition-colors"
               >
-                <Mail className="h-4 w-4" />
+                <Mail className="h-3.5 w-3.5 flex-shrink-0" />
                 <span>{siteConfig.email}</span>
               </a>
+              <div>
+                <a
+                  href={siteConfig.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 transition-colors"
+                >
+                  <MessageCircle className="h-3.5 w-3.5 flex-shrink-0" />
+                  <span>{siteConfig.whatsapp}</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -101,22 +193,19 @@ export default function Footer() {
         {/* Regulatory Disclaimer Banner */}
         <div className="mt-12 rounded-xl border border-amber-400/20 bg-amber-500/10 p-4 text-xs leading-relaxed text-amber-200">
           <p className="font-semibold text-amber-100 mb-1">
-            Important Information:
+            {t.footer.importantInfo}
           </p>
-          <p>{complianceDisclaimer}</p>
+          <p>{t.footer.disclaimer}</p>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10 bg-primary-950/80 py-6 text-xs text-gray-400">
         <div className="section-container flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p>
-            © 2026 Mattu Bridge. All rights reserved.
-            Germany.
-          </p>
+          <p>{t.footer.copyright}</p>
           <div className="flex flex-wrap items-center gap-4 text-xs">
             <Link href="/privacy-policy" className="hover:text-white">
-              Datenschutzerklärung
+              {locale === "de" ? "Datenschutz" : "Privacy Policy"}
             </Link>
             <span>·</span>
             <Link href="/impressum" className="hover:text-white">
@@ -124,7 +213,7 @@ export default function Footer() {
             </Link>
             <span>·</span>
             <Link href="/terms" className="hover:text-white">
-              AGB
+              {locale === "de" ? "AGB" : "Terms"}
             </Link>
             <span>·</span>
             <Link href="/cookie-policy" className="hover:text-white">

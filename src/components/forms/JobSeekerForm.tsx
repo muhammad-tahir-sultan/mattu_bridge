@@ -324,7 +324,7 @@ export default function JobSeekerForm() {
               type="tel"
               value={formData.whatsapp}
               onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-              placeholder="+49 151 000000"
+              placeholder="+49 15 905 664 369"
               className="input-field"
             />
           </div>

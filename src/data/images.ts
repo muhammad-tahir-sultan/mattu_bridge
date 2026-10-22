@@ -1,4 +1,16 @@
 export const images = {
+  heroStudyEurope: "/images/exported/hero-study-europe-clean.png",
+  heroTeacher: "/images/exported/hero-teacher-clean.png",
+  heroDriver: "/images/exported/hero-driver-clean.png",
+  accommodation: "/images/exported/accommodation-clean.png",
+  destinations: {
+    germany: "/images/exported/destination-germany.png",
+    poland: "/images/exported/destination-poland.png",
+    malta: "/images/exported/destination-malta.png",
+    spain: "/images/exported/destination-spain.png",
+    portugal: "/images/exported/destination-portugal.png",
+    russia: "/images/exported/destination-russia.png",
+  },
   heroEducation: "https://images.pexels.com/photos/7972324/pexels-photo-7972324.jpeg?auto=compress&cs=tinysrgb&w=1920",
   campus: "https://images.pexels.com/photos/30052431/pexels-photo-30052431.jpeg?auto=compress&cs=tinysrgb&w=1920",
   campusStairs: "https://images.pexels.com/photos/7973197/pexels-photo-7973197.jpeg?auto=compress&cs=tinysrgb&w=1920",
@@ -17,3 +29,4 @@ export const images = {
   conference: "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1920",
   seminar: "https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg?auto=compress&cs=tinysrgb&w=1920",
 };
+
