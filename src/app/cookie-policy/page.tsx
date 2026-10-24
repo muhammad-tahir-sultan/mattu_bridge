@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cookie, AlertCircle } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
+import { images } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
@@ -38,6 +39,7 @@ export default function CookiePolicyPage() {
         eyebrow="Privacy &amp; Settings"
         title="Cookie Policy"
         description="Transparent information on how Mattu Bridge uses cookies and tracking technologies under European data protection legislation."
+        imageUrl={images.viennaBuilding}
       />
 
       <section className="section-padding bg-white">

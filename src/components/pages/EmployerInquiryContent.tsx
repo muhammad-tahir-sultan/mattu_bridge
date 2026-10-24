@@ -19,7 +19,18 @@ export default function EmployerInquiryContent() {
             ? "Verbinden Sie sich mit qualifizierten Fachkräften in ganz Europa. Alle übermittelten Stellenangebote werden vor Veröffentlichung geprüft."
             : "Connect with qualified candidates across Europe. All submitted vacancies undergo review prior to public listing."
         }
-        imageUrl={images.businessMeeting}
+        imageUrl={images.frankfurt}
+        heroImage={images.businessMeeting}
+        heroImageAlt="Corporate recruitment and talent acquisition in Europe"
+        heroBadge={isDe ? "🏢 Arbeitgeber-Service" : "🏢 Employer Solutions"}
+        secondaryImage={images.handshake}
+        secondaryTitle={isDe ? "Rechtssichere Vermittlung" : "Legally Compliant"}
+        secondarySubtitle={isDe ? "Geprüfte Fachkräfte · Europaweit" : "Screened Candidates · Pan-Europe"}
+        trustHighlights={[
+          { text: isDe ? "Vorprüfung der Bewerber" : "Pre-vetted applicants" },
+          { text: isDe ? "Direkter Ansprechpartner" : "Dedicated Germany Desk" },
+          { text: isDe ? "Transparente Konditionen" : "Transparent terms" },
+        ]}
       />
 
       <section className="section-padding bg-gray-50/70">

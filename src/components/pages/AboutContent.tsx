@@ -23,7 +23,34 @@ export default function AboutContent() {
         eyebrow={t.about.eyebrow}
         title={t.about.title}
         description={t.about.description}
-        imageUrl={images.campus}
+        imageUrl={images.frankfurtRiver}
+        heroImage={images.corporateWorkshop}
+        heroImageAlt="Mattu Bridge strategic vision and consultation"
+        heroBadge={isDe ? "🤝 Unsere Vision" : "🤝 Our Vision"}
+        secondaryImage={images.viennaBuilding}
+        secondaryTitle={isDe ? "Brücke nach Europa" : "Bridge to Europe"}
+        secondarySubtitle={isDe ? "Bildung, Beruf & Initiativen" : "Education, Careers & Society"}
+        actionButtons={
+          <>
+            <a
+              href="#director-message"
+              className="btn-primary !py-3 !px-5 text-sm font-bold shadow-lg shadow-primary-900/40"
+            >
+              <span>{isDe ? "Grußwort der Geschäftsleitung" : "Director's Message"}</span>
+            </a>
+            <Link
+              href="/contact"
+              className="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10 !py-3 !px-5 text-sm"
+            >
+              <span>{isDe ? "Kontakt aufnehmen" : "Contact Us"}</span>
+            </Link>
+          </>
+        }
+        trustHighlights={[
+          { text: isDe ? "Sitz in Deutschland" : "Based in Germany" },
+          { text: isDe ? "Transparente Führung" : "Transparent Governance" },
+          { text: isDe ? "Strikte DSGVO-Konformität" : "Full GDPR Compliance" },
+        ]}
       />
 
       {/* Purpose & Approach */}

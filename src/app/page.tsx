@@ -17,6 +17,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import DirectorMessage from "@/components/DirectorMessage";
+import SocialLinks from "@/components/SocialLinks";
 import { images } from "@/data/images";
 import { siteConfig } from "@/data/content";
 import { initialJobListings } from "@/data/jobsData";
@@ -733,7 +734,14 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <p className="mt-8 text-xs text-gray-400">
+          <div className="mt-8 pt-6 border-t border-white/10 flex flex-col items-center justify-center gap-3">
+            <span className="text-xs uppercase tracking-wider font-semibold text-primary-200">
+              {t.common.followUs}
+            </span>
+            <SocialLinks variant="footer" showLabels={true} />
+          </div>
+
+          <p className="mt-6 text-xs text-gray-400">
             {locale === "de"
               ? "Offizielle Betreuung mit Sitz in Deutschland · Wir antworten in der Regel innerhalb von 1-2 Werktagen."
               : "Official communications handled from Germany · Please allow 1-2 business days for structured responses."}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AlertCircle } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
+import { images } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions — Allgemeine Geschäftsbedingungen (AGB)",
@@ -69,6 +70,7 @@ export default function TermsPage() {
         eyebrow="Allgemeine Geschäftsbedingungen"
         title="Terms &amp; Conditions (AGB)"
         description="Contractual framework governing website usage, educational guidance inquiries, job seeker registrations, and employer requests."
+        imageUrl={images.viennaBuilding}
       />
 
       <section className="section-padding bg-white">

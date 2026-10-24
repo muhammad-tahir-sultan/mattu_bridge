@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AlertCircle, Shield } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { siteConfig } from "@/data/content";
+import { images } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Datenschutzerklärung (GDPR)",
@@ -87,6 +88,7 @@ export default function PrivacyPolicyPage() {
         eyebrow="Legal &amp; Compliance"
         title="Privacy Policy — Datenschutzerklärung"
         description="Information regarding the collection, processing, storage, and protection of personal data in accordance with the EU General Data Protection Regulation (GDPR)."
+        imageUrl={images.viennaBuilding}
       />
 
       <section className="section-padding bg-white">

@@ -26,6 +26,8 @@ export interface TranslationSchema {
     germanCompliance: string;
     zeroGuarantees: string;
     servingNotice: string;
+    followUs: string;
+    socialChannels: string;
   };
   nav: {
     home: string;
@@ -69,6 +71,7 @@ export interface TranslationSchema {
     aboutLink: string;
     directorLink: string;
     contactLink: string;
+    followUs: string;
   };
   cookies: {
     title: string;
@@ -181,6 +184,8 @@ export interface TranslationSchema {
     hoursNotice: string;
     privacyNoticeTitle: string;
     privacyNoticeDesc: string;
+    socialChannelsTitle: string;
+    socialChannelsDesc: string;
     formTitle: string;
     formDesc: string;
   };
@@ -262,6 +267,8 @@ export const translations: Record<Locale, TranslationSchema> = {
       germanCompliance: "German Legal Notice Compliance",
       zeroGuarantees: "Zero Admission / Job Guarantees",
       servingNotice: "Operating from Germany · Serving Europe & International Applicants",
+      followUs: "Follow Us",
+      socialChannels: "Social Media Channels",
     },
     nav: {
       home: "Home",
@@ -308,6 +315,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       aboutLink: "About Mattu Bridge",
       directorLink: "Director's Welcome",
       contactLink: "Contact & Enquiries",
+      followUs: "Connect & Follow Us",
     },
     cookies: {
       title: "Privacy & Cookie Consent",
@@ -445,6 +453,8 @@ export const translations: Record<Locale, TranslationSchema> = {
       privacyNoticeTitle: "Privacy Notice",
       privacyNoticeDesc:
         "Your message is transmitted securely. We only collect details necessary to address your enquiry in line with GDPR guidelines.",
+      socialChannelsTitle: "Social Media Channels",
+      socialChannelsDesc: "Follow Mattu Bridge on Facebook, Instagram, and TikTok for the latest updates, opportunities, and international event announcements.",
       formTitle: "Send Us an Inquiry",
       formDesc: "Fill in the fields below and our representative will respond promptly.",
     },
@@ -562,6 +572,8 @@ export const translations: Record<Locale, TranslationSchema> = {
       germanCompliance: "Deutsches Impressum & Rechtskonformität",
       zeroGuarantees: "Keine unbegründeten Erfolgsversprechen",
       servingNotice: "Tätig aus Deutschland · Für Klienten in ganz Europa & weltweit",
+      followUs: "Folgen Sie uns",
+      socialChannels: "Soziale Medien",
     },
     nav: {
       home: "Startseite",
@@ -608,6 +620,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       aboutLink: "Über Mattu Bridge",
       directorLink: "Grußwort der Geschäftsleitung",
       contactLink: "Kontakt & Anfragen",
+      followUs: "Verbinden & Folgen",
     },
     cookies: {
       title: "Datenschutz & Cookie-Einwilligung",
@@ -745,6 +758,8 @@ export const translations: Record<Locale, TranslationSchema> = {
       privacyNoticeTitle: "Datenschutzhinweis",
       privacyNoticeDesc:
         "Ihre Nachricht wird verschlüsselt übertragen. Wir erfassen nur Angaben, die zur Bearbeitung Ihrer Anfrage gemäß DSGVO notwendig sind.",
+      socialChannelsTitle: "Soziale Netzwerke & Kanäle",
+      socialChannelsDesc: "Folgen Sie Mattu Bridge auf Facebook, Instagram und TikTok für Neuigkeiten, Karrierechancen und internationale Bildungsinitiativen.",
       formTitle: "Nachricht an uns senden",
       formDesc: "Füllen Sie das Formular aus, unser Team meldet sich zeitnah bei Ihnen.",
     },

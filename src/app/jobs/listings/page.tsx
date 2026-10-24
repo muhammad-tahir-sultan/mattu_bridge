@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { initialJobListings, jobCategories, employmentCountries, JobListing } from "@/data/jobsData";
+import { images } from "@/data/images";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function JobListingsPage() {
@@ -101,6 +102,18 @@ export default function JobListingsPage() {
             ? "Durchsuchen Sie geprüfte Stellenangebote registrierter europäischer Arbeitgeber in den Bereichen Logistik, Pflege, Gastronomie und Technik."
             : "Browse reviewed and approved vacancies from registered European employers across logistics, healthcare, hospitality, and engineering."
         }
+        imageUrl={images.frankfurtRiver}
+        heroImage={images.jobInterview}
+        heroImageAlt="European professional job recruitment"
+        heroBadge={isDe ? "💼 Stellenangebote" : "💼 Active Vacancies"}
+        secondaryImage={images.warehouse}
+        secondaryTitle={isDe ? "Verifizierte Vakanzen" : "Verified Postings"}
+        secondarySubtitle={isDe ? "Vollzeit, Teilzeit & Vertrag" : "Full-Time, Part-Time & Contract"}
+        trustHighlights={[
+          { text: isDe ? "Rechtlich geprüft" : "Pre-vetted Roles" },
+          { text: isDe ? "Direktbewerbung" : "Direct Application" },
+          { text: isDe ? "Kostenlos für Bewerber" : "Free for Applicants" },
+        ]}
       />
 
       <section className="section-padding bg-gray-50/70">

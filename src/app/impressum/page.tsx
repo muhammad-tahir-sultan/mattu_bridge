@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AlertCircle, Scale, Shield } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { siteConfig } from "@/data/content";
+import { images } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "Impressum — German Legal Notice",
@@ -16,6 +17,7 @@ export default function ImpressumPage() {
         eyebrow="Rechtliche Hinweise"
         title="Impressum"
         description="Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) / ehemals Telemediengesetz (TMG) für Mattu Bridge."
+        imageUrl={images.viennaBuilding}
       />
 
       <section className="section-padding bg-white">

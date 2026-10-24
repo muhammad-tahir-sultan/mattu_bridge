@@ -21,7 +21,35 @@ export default function EventsContent() {
         eyebrow={t.events.eyebrow}
         title={t.events.title}
         description={t.events.description}
-        imageUrl={images.conference}
+        imageUrl={images.eventStage}
+        heroImage={images.conference}
+        heroImageAlt="International conferences and academic forums in Europe"
+        heroBadge={isDe ? "🌍 Konferenzen & Foren" : "🌍 Conferences & Forums"}
+        secondaryImage={images.seminar}
+        secondaryTitle={isDe ? "Bildung & Gesellschaft" : "Dialogue & Knowledge"}
+        secondarySubtitle={isDe ? "Europäischer Austausch" : "Cross-Border Initiatives"}
+        actionButtons={
+          <>
+            <a
+              href="#upcoming-events"
+              className="btn-primary !py-3 !px-5 text-sm font-bold shadow-lg shadow-primary-900/40"
+            >
+              <Calendar className="h-4 w-4" />
+              <span>{isDe ? "Aktuelle Veranstaltungen" : "Explore Upcoming Events"}</span>
+            </a>
+            <a
+              href="#register-event"
+              className="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10 !py-3 !px-5 text-sm"
+            >
+              <span>{isDe ? "Teilnahme anfragen" : "Register Participation"}</span>
+            </a>
+          </>
+        }
+        trustHighlights={[
+          { text: isDe ? "Internationale Referenten" : "International Speakers" },
+          { text: isDe ? "Wissenstransfer" : "Knowledge Transfer" },
+          { text: isDe ? "Kostenfreie Teilnahme" : "Free Registrations" },
+        ]}
       />
 
       {/* Scope of Events */}

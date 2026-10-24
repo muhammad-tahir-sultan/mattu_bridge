@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
+import SocialLinks from "./SocialLinks";
 import { useLanguage } from "@/context/LanguageContext";
 import { siteConfig } from "@/data/content";
 
@@ -85,7 +86,9 @@ export default function Navbar() {
             <span className="whitespace-nowrap">{t.common.topBannerText}</span>
           </div>
 
-          <div className="flex items-center gap-4 text-gray-300 whitespace-nowrap">
+          <div className="flex items-center gap-3 sm:gap-4 text-gray-300 whitespace-nowrap">
+            <SocialLinks variant="banner" />
+            <span className="text-gray-700 hidden sm:inline">|</span>
             <LanguageSwitcher variant="banner" />
             <span className="text-gray-700 hidden sm:inline">|</span>
             <a
@@ -294,6 +297,13 @@ export default function Navbar() {
             >
               {t.common.adminPortal}
             </Link>
+
+            <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
+              <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                {t.common.followUs}:
+              </span>
+              <SocialLinks variant="mobile" />
+            </div>
           </div>
         </div>
       )}

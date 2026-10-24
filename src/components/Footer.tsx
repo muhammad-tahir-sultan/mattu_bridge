@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Mail, MessageCircle, ShieldCheck } from "lucide-react";
 import Logo from "./Logo";
+import SocialLinks from "./SocialLinks";
 import { siteConfig } from "@/data/content";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -20,6 +21,15 @@ export default function Footer() {
             <p className="text-sm leading-relaxed text-gray-300 max-w-sm">
               {t.footer.description}
             </p>
+
+            {/* Social Media Links */}
+            <div className="pt-1">
+              <p className="text-xs font-semibold text-primary-200 uppercase tracking-wider mb-2.5">
+                {t.footer.followUs}
+              </p>
+              <SocialLinks variant="footer" showLabels={true} />
+            </div>
+
             <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-xs text-gray-300">
               <div className="flex items-start gap-2.5">
                 <ShieldCheck className="h-5 w-5 text-primary-300 flex-shrink-0 mt-0.5" />

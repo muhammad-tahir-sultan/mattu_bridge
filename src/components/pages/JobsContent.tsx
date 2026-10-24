@@ -73,7 +73,36 @@ export default function JobsContent() {
         eyebrow={t.jobs.eyebrow}
         title={t.jobs.title}
         description={t.jobs.description}
-        imageUrl={images.truck}
+        imageUrl={images.frankfurt}
+        heroImage={images.truck}
+        heroImageAlt="Commercial transport and vocational employment in Europe"
+        heroBadge={isDe ? "🚛 Europäische Arbeitsvermittlung" : "🚛 European Placement"}
+        secondaryImage={images.healthcareNurse}
+        secondaryTitle={isDe ? "Geprüfte Arbeitgeber" : "Verified Employers"}
+        secondarySubtitle={isDe ? "Logistik, Pflege & Technik" : "Logistics, Healthcare & Tech"}
+        actionButtons={
+          <>
+            <Link
+              href="/jobs/job-seeker-registration"
+              className="btn-primary !py-3 !px-5 text-sm font-bold shadow-lg shadow-primary-900/40"
+            >
+              <UserCheck className="h-4 w-4" />
+              <span>{isDe ? "Als Bewerber registrieren" : "Register as Candidate"}</span>
+            </Link>
+            <Link
+              href="/jobs/listings"
+              className="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10 !py-3 !px-5 text-sm"
+            >
+              <Search className="h-4 w-4" />
+              <span>{isDe ? "Stellenmarkt ansehen" : "Browse Job Board"}</span>
+            </Link>
+          </>
+        }
+        trustHighlights={[
+          { text: isDe ? "Kostenlose Registrierung" : "Free Candidate Intake" },
+          { text: isDe ? "Geprüfte Arbeitgeber" : "Vetted EU Employers" },
+          { text: isDe ? "Rechtlich konform" : "Legally Compliant" },
+        ]}
       />
 
       {/* Two Prominent Action Cards */}

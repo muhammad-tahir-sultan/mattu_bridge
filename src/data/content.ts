@@ -12,6 +12,34 @@ export const siteConfig = {
   tagline: "Connecting Education, Careers & International Opportunities",
   description:
     "Mattu Bridge brings together educational consultancy, employment placement and recruitment, and international educational and social initiatives through one professional platform.",
+  social: {
+    facebook: "https://www.facebook.com/profile.php?id=61594515052924",
+    tiktok: "https://www.tiktok.com/@mattu.bridge",
+    instagram: "https://www.instagram.com/mattu.bridge?xtok=MWF4b3NxbzN3d3o4Nw%3D%3D&utm_source=qr",
+  },
+  socialLinks: [
+    {
+      id: "facebook" as const,
+      name: "Facebook",
+      handle: "Mattu Bridge",
+      url: "https://www.facebook.com/profile.php?id=61594515052924",
+      colorHex: "#1877F2",
+    },
+    {
+      id: "instagram" as const,
+      name: "Instagram",
+      handle: "@mattu.bridge",
+      url: "https://www.instagram.com/mattu.bridge?xtok=MWF4b3NxbzN3d3o4Nw%3D%3D&utm_source=qr",
+      colorHex: "#E4405F",
+    },
+    {
+      id: "tiktok" as const,
+      name: "TikTok",
+      handle: "@mattu.bridge",
+      url: "https://www.tiktok.com/@mattu.bridge",
+      colorHex: "#000000",
+    },
+  ],
 };
 
 export const directorMessage = {

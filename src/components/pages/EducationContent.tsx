@@ -81,7 +81,35 @@ export default function EducationContent() {
         eyebrow={t.education.eyebrow}
         title={t.education.title}
         description={t.education.description}
-        imageUrl={images.campusStairs}
+        imageUrl={images.campus}
+        heroImage={images.studentsGroup}
+        heroImageAlt="International students studying in European university"
+        heroBadge={isDe ? "🎓 Hochschulen & Ausbildung" : "🎓 Degrees & Ausbildung"}
+        secondaryImage={images.graduationCaps}
+        secondaryTitle={isDe ? "Anerkannte Abschlüsse" : "Accredited Degrees"}
+        secondarySubtitle={isDe ? "Deutschland & Europa" : "Germany & Across Europe"}
+        actionButtons={
+          <>
+            <a
+              href="#enquiry-form"
+              className="btn-primary !py-3 !px-5 text-sm font-bold shadow-lg shadow-primary-900/40"
+            >
+              <GraduationCap className="h-4 w-4" />
+              <span>{isDe ? "Studienanfrage einreichen" : "Submit Study Enquiry"}</span>
+            </a>
+            <a
+              href="#pathways"
+              className="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10 !py-3 !px-5 text-sm"
+            >
+              <span>{isDe ? "Bildungswege ansehen" : "Explore Pathways"}</span>
+            </a>
+          </>
+        }
+        trustHighlights={[
+          { text: isDe ? "Keine Aufnahmegebühren" : "No upfront fees" },
+          { text: isDe ? "Uni-Assist Beratung" : "Uni-Assist Guidance" },
+          { text: isDe ? "DSGVO-konform" : "GDPR-compliant" },
+        ]}
       />
 
       {/* Intro Overview & Integrity Notice */}
