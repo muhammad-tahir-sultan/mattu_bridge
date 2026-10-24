@@ -59,28 +59,28 @@ export default function LanguageSwitcher({
       <button
         type="button"
         onClick={() => setLocale("en")}
-        className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
+        className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
           locale === "en"
             ? "bg-primary-900 text-white shadow-sm"
             : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
         }`}
         aria-pressed={locale === "en"}
       >
-        <span>🇬🇧</span>
+        <span className="hidden sm:inline">🇬🇧</span>
         <span>EN</span>
       </button>
 
       <button
         type="button"
         onClick={() => setLocale("de")}
-        className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
+        className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
           locale === "de"
             ? "bg-primary-900 text-white shadow-sm"
             : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
         }`}
         aria-pressed={locale === "de"}
       >
-        <span>🇩🇪</span>
+        <span className="hidden sm:inline">🇩🇪</span>
         <span>DE</span>
       </button>
     </div>

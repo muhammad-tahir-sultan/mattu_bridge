@@ -79,25 +79,27 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur-md transition-all">
       {/* Top Banner Notice for Germany compliance & direct reach */}
-      <div className="border-b border-primary-950/10 bg-primary-950 px-4 py-1.5 text-xs text-primary-100">
-        <div className="w-full max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <div className="flex items-center gap-2 whitespace-nowrap">
+      <div className="border-b border-primary-950/10 bg-primary-950 px-3 sm:px-4 py-1 sm:py-1.5 text-xs text-primary-100 overflow-hidden">
+        <div className="w-full max-w-[92rem] mx-auto flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 min-w-0 flex-1">
             <span className="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
-            <span className="whitespace-nowrap">{t.common.topBannerText}</span>
+            <span className="truncate text-[11px] sm:text-xs font-medium tracking-tight">
+              {t.common.topBannerText}
+            </span>
           </div>
 
-          <div className="flex items-center gap-3 sm:gap-4 text-gray-300 whitespace-nowrap">
+          <div className="hidden sm:flex items-center gap-3 sm:gap-4 text-gray-300 whitespace-nowrap flex-shrink-0">
             <SocialLinks variant="banner" />
-            <span className="text-gray-700 hidden sm:inline">|</span>
+            <span className="text-gray-700">|</span>
             <LanguageSwitcher variant="banner" />
-            <span className="text-gray-700 hidden sm:inline">|</span>
+            <span className="text-gray-700">|</span>
             <a
               href={`mailto:${siteConfig.email}`}
-              className="hidden sm:inline hover:text-white transition-colors whitespace-nowrap"
+              className="hover:text-white transition-colors whitespace-nowrap"
             >
               {siteConfig.email}
             </a>
-            <span className="text-gray-700 hidden sm:inline">|</span>
+            <span className="text-gray-700">|</span>
             <Link
               href="/admin"
               className="text-primary-300 hover:text-white transition-colors whitespace-nowrap"
@@ -109,7 +111,7 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <div className="w-full max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between gap-4">
+      <div className="w-full max-w-[92rem] mx-auto px-3 sm:px-6 lg:px-8 flex h-16 sm:h-20 items-center justify-between gap-2 sm:gap-4">
         <Logo />
 
         {/* Desktop Navigation */}
@@ -203,12 +205,12 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Controls */}
-        <div className="flex lg:hidden items-center gap-2">
+        <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 flex-shrink-0">
           <LanguageSwitcher variant="pill" />
 
           <Link
             href="/contact"
-            className="btn-primary !py-1.5 !px-2.5 text-xs whitespace-nowrap"
+            className="hidden min-[400px]:inline-flex btn-primary !py-1.5 !px-2.5 text-xs whitespace-nowrap"
           >
             {locale === "de" ? "Kontakt" : "Contact"}
           </Link>
@@ -216,13 +218,13 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="rounded-lg p-2 text-gray-700 hover:bg-gray-100 focus:outline-none"
+            className="rounded-lg p-1.5 sm:p-2 text-gray-700 hover:bg-gray-100 focus:outline-none flex-shrink-0"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-5 w-5 sm:h-6 sm:w-6" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
             )}
           </button>
         </div>
@@ -230,7 +232,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-gray-200 bg-white px-4 pt-2 pb-6 shadow-xl animate-in slide-in-from-top-4 duration-200">
+        <div className="lg:hidden border-b border-gray-200 bg-white px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top-4 duration-200 max-h-[calc(100vh-4.5rem)] overflow-y-auto">
           <div className="flex items-center justify-between pb-3 mb-3 border-b border-gray-100">
             <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
               {t.nav.language}:
