@@ -368,38 +368,6 @@ export default function AdminPage() {
                 )}
               </button>
             </form>
-
-            {/* Default credentials helper card */}
-            <div className="mt-6 pt-5 border-t border-white/10 bg-white/5 rounded-2xl p-3.5 text-xs text-gray-300">
-              <div className="flex items-center justify-between mb-1.5">
-                <span className="font-semibold text-emerald-300 flex items-center gap-1.5">
-                  <ShieldCheck className="h-3.5 w-3.5" />
-                  <span>Default Admin Account</span>
-                </span>
-                <button
-                  type="button"
-                  onClick={() =>
-                    setLoginData({
-                      username: "admin",
-                      password: "AdminPassword2026!",
-                    })
-                  }
-                  className="text-[11px] text-primary-300 hover:text-white underline font-medium"
-                >
-                  Fill credentials
-                </button>
-              </div>
-              <div className="grid grid-cols-2 gap-2 text-[11px] font-mono text-gray-300 bg-black/40 p-2 rounded-lg border border-white/5">
-                <div>
-                  <span className="text-gray-500 block">User:</span>
-                  admin
-                </div>
-                <div>
-                  <span className="text-gray-500 block">Pass:</span>
-                  AdminPassword2026!
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Security Note */}

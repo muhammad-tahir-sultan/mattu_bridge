@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-50: #eef6ff;
-  --color-primary-100: #d9ecff;
-  --color-primary-200: #bcdcff;
-  --color-primary-300: #8ec6ff;
-  --color-primary-400: #59a6ff;
-  --color-primary-500: #3385fc;
-  --color-primary-600: #1d67f3;
-  --color-primary-700: #1551e0;
-  --color-primary-800: #1843b6;
-  --color-primary-900: #1a3c8f;
-  --color-primary-950: #142557;
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #e0effe;
+  --color-primary-200: #bae0fd;
+  --color-primary-300: #7cc5fb;
+  --color-primary-400: #3aa6f7;
+  --color-primary-500: #188aed;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #2d6ef5;
+  --color-primary-800: #2558c7;
+  --color-primary-900: #1f459c;
+  --color-primary-950: #1c356f;
 
   --color-accent-50: #fffbeb;
   --color-accent-100: #fef3c7;
@@ -164,11 +164,11 @@ h1, h2, h3, h4, .font-display {
   font-weight: 600;
   color: #ffffff;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 4px 6px -1px rgba(21, 81, 224, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(45, 110, 245, 0.22);
 }
 .btn-primary:hover {
   background-color: var(--color-primary-800);
-  box-shadow: 0 10px 15px -3px rgba(21, 81, 224, 0.3);
+  box-shadow: 0 10px 15px -3px rgba(45, 110, 245, 0.32);
   transform: translateY(-1px);
 }
 .btn-primary:active {
