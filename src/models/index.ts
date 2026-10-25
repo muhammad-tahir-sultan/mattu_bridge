@@ -142,3 +142,21 @@ export const EmployerEnquiry = models.EmployerEnquiry || model("EmployerEnquiry"
 export const JobListingModel = models.JobListing || model("JobListing", JobListingSchema);
 export const EventRegistration = models.EventRegistration || model("EventRegistration", EventRegistrationSchema);
 export const ContactMessage = models.ContactMessage || model("ContactMessage", ContactMessageSchema);
+
+// 7. Admin User Schema
+const AdminUserSchema = new Schema(
+  {
+    username: { type: String, required: true, unique: true, lowercase: true, trim: true },
+    email: { type: String, required: true, unique: true, lowercase: true, trim: true },
+    passwordHash: { type: String, required: true },
+    salt: { type: String, required: true },
+    fullName: { type: String, default: "Mattu Bridge Administrator" },
+    role: { type: String, default: "superadmin" },
+    lastLogin: { type: Date },
+    isActive: { type: Boolean, default: true },
+  },
+  { timestamps: true }
+);
+
+export const AdminUser = models.AdminUser || model("AdminUser", AdminUserSchema);
+

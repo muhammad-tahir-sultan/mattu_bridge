@@ -11,6 +11,7 @@ import {
   CheckCircle,
   XCircle,
   Eye,
+  EyeOff,
   Trash2,
   RefreshCw,
   PlusCircle,
@@ -18,11 +19,32 @@ import {
   Filter,
   ShieldCheck,
   FileText,
+  Lock,
+  User,
+  LogOut,
+  AlertCircle,
+  Loader2,
+  KeyRound,
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
+import Logo from "@/components/Logo";
 import { initialJobListings, JobListing } from "@/data/jobsData";
 
 export default function AdminPage() {
+  // Authentication State
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [currentUser, setCurrentUser] = useState<{
+    id?: string;
+    username: string;
+    email: string;
+    fullName: string;
+    role: string;
+  } | null>(null);
+  const [loginData, setLoginData] = useState({ username: "", password: "" });
+  const [loginError, setLoginError] = useState("");
+  const [loginSubmitting, setLoginSubmitting] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   const [activeTab, setActiveTab] = useState<
     "overview" | "students" | "jobSeekers" | "employers" | "jobs" | "events" | "messages"
   >("overview");
@@ -33,6 +55,62 @@ export default function AdminPage() {
   const [jobListings, setJobListings] = useState<JobListing[]>(initialJobListings);
   const [contactMessages, setContactMessages] = useState<any[]>([]);
   const [selectedItem, setSelectedItem] = useState<any | null>(null);
+
+  // Check existing session on mount
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const res = await fetch("/api/admin/me");
+        const data = await res.json();
+        if (data.authenticated && data.user) {
+          setIsAuthenticated(true);
+          setCurrentUser(data.user);
+          loadData();
+        } else {
+          setIsAuthenticated(false);
+        }
+      } catch {
+        setIsAuthenticated(false);
+      }
+    };
+    checkAuth();
+  }, []);
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoginSubmitting(true);
+    setLoginError("");
+
+    try {
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(loginData),
+      });
+      const data = await res.json();
+
+      if (data.success && data.user) {
+        setIsAuthenticated(true);
+        setCurrentUser(data.user);
+        loadData();
+      } else {
+        setLoginError(data.error || "Invalid username or password");
+      }
+    } catch {
+      setLoginError("Connection failed. Please check network and retry.");
+    } finally {
+      setLoginSubmitting(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/admin/logout", { method: "POST" });
+    } finally {
+      setIsAuthenticated(false);
+      setCurrentUser(null);
+    }
+  };
 
   // Load from MongoDB APIs with LocalStorage fallback
   const loadData = async () => {
@@ -116,15 +194,9 @@ export default function AdminPage() {
       const pendingJobs = JSON.parse(localStorage.getItem("mattu_pending_jobs") || "[]");
       if (pendingJobs.length > 0) {
         setJobListings([...pendingJobs, ...initialJobListings]);
-      } else {
-        setJobListings(initialJobListings);
       }
     }
   };
-
-  useEffect(() => {
-    loadData();
-  }, []);
 
   // Action handlers
   const handleApproveJob = async (jobId: string) => {
@@ -187,6 +259,159 @@ export default function AdminPage() {
     if (selectedItem?.id === id) setSelectedItem(null);
   };
 
+  // 1. Session Loading State
+  if (isAuthenticated === null) {
+    return (
+      <div className="min-h-screen bg-primary-950 flex flex-col items-center justify-center p-6 text-white">
+        <Loader2 className="h-9 w-9 animate-spin text-emerald-400 mb-4" />
+        <p className="text-sm text-gray-300 font-medium">Verifying Administrator Session...</p>
+      </div>
+    );
+  }
+
+  // 2. Unauthenticated Login Screen
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-primary-950 via-slate-900 to-primary-950 flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-hidden text-white">
+        {/* Background glow orbs */}
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary-600/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="w-full max-w-md relative z-10">
+          {/* Logo & Header */}
+          <div className="text-center mb-6">
+            <div className="inline-block mb-3">
+              <Logo isDark={true} />
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-emerald-300 mb-2">
+              <Lock className="h-3 w-3" />
+              <span>Geschützter Bereich · Restricted Access</span>
+            </div>
+            <h1 className="font-display text-2xl sm:text-3xl font-bold text-white">
+              Admin Portal
+            </h1>
+            <p className="text-xs sm:text-sm text-gray-400 mt-1">
+              Sign in with your verified administrative credentials
+            </p>
+          </div>
+
+          {/* Login Card */}
+          <div className="rounded-3xl border border-white/15 bg-white/10 p-6 sm:p-8 backdrop-blur-xl shadow-2xl">
+            {loginError && (
+              <div className="mb-5 flex items-start gap-2.5 rounded-2xl border border-rose-500/30 bg-rose-500/10 p-3.5 text-xs text-rose-200">
+                <AlertCircle className="h-4 w-4 text-rose-400 flex-shrink-0 mt-0.5" />
+                <span>{loginError}</span>
+              </div>
+            )}
+
+            <form onSubmit={handleLogin} className="space-y-4">
+              <div>
+                <label className="block text-xs font-semibold text-gray-300 mb-1.5 uppercase tracking-wider">
+                  Username or Email
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+                    <User className="h-4 w-4" />
+                  </div>
+                  <input
+                    type="text"
+                    required
+                    value={loginData.username}
+                    onChange={(e) => setLoginData({ ...loginData, username: e.target.value })}
+                    placeholder="admin or admin@mattubridge.de"
+                    className="w-full rounded-xl border border-white/15 bg-black/30 pl-10 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:border-emerald-400 focus:outline-none focus:ring-1 focus:ring-emerald-400"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-gray-300 mb-1.5 uppercase tracking-wider">
+                  Password
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+                    <Lock className="h-4 w-4" />
+                  </div>
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    required
+                    value={loginData.password}
+                    onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
+                    placeholder="Enter admin password"
+                    className="w-full rounded-xl border border-white/15 bg-black/30 pl-10 pr-10 py-2.5 text-sm text-white placeholder-gray-500 focus:border-emerald-400 focus:outline-none focus:ring-1 focus:ring-emerald-400"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-gray-400 hover:text-white"
+                  >
+                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                  </button>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={loginSubmitting}
+                className="btn-accent w-full justify-center !py-3 text-sm font-bold shadow-lg shadow-emerald-500/20 disabled:opacity-50 mt-2"
+              >
+                {loginSubmitting ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    <span>Verifying...</span>
+                  </>
+                ) : (
+                  <>
+                    <KeyRound className="h-4 w-4" />
+                    <span>Sign In to Admin Portal</span>
+                  </>
+                )}
+              </button>
+            </form>
+
+            {/* Default credentials helper card */}
+            <div className="mt-6 pt-5 border-t border-white/10 bg-white/5 rounded-2xl p-3.5 text-xs text-gray-300">
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="font-semibold text-emerald-300 flex items-center gap-1.5">
+                  <ShieldCheck className="h-3.5 w-3.5" />
+                  <span>Default Admin Account</span>
+                </span>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setLoginData({
+                      username: "admin",
+                      password: "AdminPassword2026!",
+                    })
+                  }
+                  className="text-[11px] text-primary-300 hover:text-white underline font-medium"
+                >
+                  Fill credentials
+                </button>
+              </div>
+              <div className="grid grid-cols-2 gap-2 text-[11px] font-mono text-gray-300 bg-black/40 p-2 rounded-lg border border-white/5">
+                <div>
+                  <span className="text-gray-500 block">User:</span>
+                  admin
+                </div>
+                <div>
+                  <span className="text-gray-500 block">Pass:</span>
+                  AdminPassword2026!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Security Note */}
+          <p className="mt-4 text-center text-[11px] text-gray-500">
+            256-bit Encrypted Session · Strict Access Logging · German DDG / GDPR Compliant
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // 3. Authenticated Admin Portal
   return (
     <div className="min-h-screen bg-gray-50/70 pb-20">
       <PageHeader
@@ -195,7 +420,49 @@ export default function AdminPage() {
         description="Review student enquiries, evaluate candidate profiles, approve employer job advertisements, and manage published listings."
       />
 
-      <div className="section-container mt-8">
+      <div className="section-container mt-6">
+        {/* Admin User Header Status & Logout Bar */}
+        <div className="flex flex-wrap items-center justify-between gap-4 bg-primary-950 text-white px-5 py-3 rounded-2xl shadow-md border border-primary-900 mb-6">
+          <div className="flex items-center gap-3">
+            <div className="h-9 w-9 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-300 font-bold text-sm">
+              <User className="h-4 w-4" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-bold text-white">
+                  {currentUser?.fullName || "I.A Mattu (Director)"}
+                </span>
+                <span className="rounded-full bg-emerald-500/20 border border-emerald-400/30 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-300">
+                  {currentUser?.role || "Superadmin"}
+                </span>
+              </div>
+              <p className="text-xs text-gray-400">
+                Logged in as <span className="text-primary-200 font-mono">@{currentUser?.username || "admin"}</span> ({currentUser?.email || "admin@mattubridge.de"})
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={loadData}
+              title="Refresh Data"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-gray-300 hover:bg-white/10 hover:text-white transition-all"
+            >
+              <RefreshCw className="h-3.5 w-3.5" />
+              <span>Refresh</span>
+            </button>
+            <button
+              type="button"
+              onClick={handleLogout}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-rose-500/30 bg-rose-500/10 px-3.5 py-2 text-xs font-bold text-rose-200 hover:bg-rose-500/20 hover:text-white transition-all shadow-sm"
+            >
+              <LogOut className="h-3.5 w-3.5" />
+              <span>Logout</span>
+            </button>
+          </div>
+        </div>
+
         {/* Navigation Tabs Bar */}
         <div className="flex flex-wrap items-center gap-2 border-b border-gray-200 bg-white p-2 rounded-2xl shadow-sm mb-8">
           {[
