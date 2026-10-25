@@ -9,7 +9,7 @@ export const images = {
     malta: "/images/exported/destination-malta.png",
     spain: "/images/exported/destination-spain.png",
     portugal: "/images/exported/destination-portugal.png",
-    russia: "/images/exported/destination-russia.png",
+    hungary: "/images/exported/destination-hungary.jpg",
   },
   heroEducation: "https://images.pexels.com/photos/7972324/pexels-photo-7972324.jpeg?auto=compress&cs=tinysrgb&w=1920",
   campus: "https://images.pexels.com/photos/30052431/pexels-photo-30052431.jpeg?auto=compress&cs=tinysrgb&w=1920",

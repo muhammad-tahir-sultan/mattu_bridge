@@ -341,11 +341,11 @@ export default function HomePage() {
                 image: images.destinations.portugal,
               },
               {
-                country: "Russia",
-                countryDe: "Russland",
-                tag: "Specialized Medical & Science",
-                tagDe: "Medizinische Fachausbildung",
-                image: images.destinations.russia,
+                country: "Hungary",
+                countryDe: "Ungarn",
+                tag: "Affordable EU Degrees & Medicine",
+                tagDe: "Bezahlbare EU-Abschlüsse & Medizin",
+                image: images.destinations.hungary,
               },
             ].map((dest, i) => (
               <Link
