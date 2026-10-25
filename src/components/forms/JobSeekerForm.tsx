@@ -449,7 +449,7 @@ export default function JobSeekerForm() {
             <span className="font-semibold text-gray-900">Required:</span> I agree that Mattu Bridge processes my registration data to assess employment opportunities in accordance with the{" "}
             <a href="/privacy-policy" target="_blank" className="text-primary-700 underline font-semibold">
               Datenschutzerklärung
-            </a>. I understand that Mattu Bridge does not guarantee employment, interviews, or visas.
+            </a>.
           </span>
         </label>
 

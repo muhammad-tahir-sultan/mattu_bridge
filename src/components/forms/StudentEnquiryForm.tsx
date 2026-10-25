@@ -417,7 +417,7 @@ export default function StudentEnquiryForm() {
             respond to this educational enquiry in accordance with the{" "}
             <a href="/privacy-policy" target="_blank" className="text-primary-700 underline font-semibold">
               Datenschutzerklärung (Privacy Policy)
-            </a>. I understand that submitting this enquiry does not guarantee admission, scholarship, or visa issuance.
+            </a>.
           </span>
         </label>
       </div>

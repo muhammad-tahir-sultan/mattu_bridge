@@ -222,12 +222,12 @@ export default function AboutContent() {
 
             <div className="rounded-2xl border border-gray-200 bg-gray-50/50 p-6">
               <h3 className="font-display text-lg font-bold text-gray-900 mb-2">
-                {isDe ? "Fokus auf Kernkompetenzen" : "Zero Accommodation Interference"}
+                {isDe ? "Fokus auf Kernkompetenzen" : "Focused Core Expertise"}
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
                 {isDe
-                  ? "Um internationale Bewerber vor betrügerischen Wohnungsvermittlungen zu schützen, vermitteln wir keine Wohnungen und konzentrieren uns vollständig auf Bildung und Rekrutierung."
-                  : "To protect international applicants from housing fraud and third-party liabilities, Mattu Bridge does not offer or broker accommodation services."}
+                  ? "Wir konzentrieren uns gezielt auf unsere Stärken: hochwertige Bildungsberatung, strukturierte Arbeitsvermittlung und internationale Kooperationen."
+                  : "We focus dedicatedly on our core strengths: high-quality educational guidance, structured employment matching, and international cooperation."}
               </p>
             </div>
           </div>

@@ -9,7 +9,6 @@ import {
   CheckCircle2,
   Clock,
   ArrowRight,
-  ShieldAlert,
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import StudentEnquiryForm from "@/components/forms/StudentEnquiryForm";

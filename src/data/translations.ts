@@ -265,7 +265,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       whatsappOnline: "Online & Active",
       gdprCompliant: "GDPR Data Minimization",
       germanCompliance: "German Legal Notice Compliance",
-      zeroGuarantees: "Zero Admission / Job Guarantees",
+      zeroGuarantees: "Verified German Advisory",
       servingNotice: "Operating from Germany · Serving Europe & International Applicants",
       followUs: "Follow Us",
       socialChannels: "Social Media Channels",
@@ -356,7 +356,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       ctaEvents: "International Events",
       trust1: "GDPR Data Minimization",
       trust2: "German Legal Notice Compliance",
-      trust3: "Zero Admission / Job Guarantees",
+      trust3: "Direct German Advisory",
       pillarsEyebrow: "Our Three Core Pillars",
       pillarsTitle: "Professional European Gateway",
       pillarsSubtitle:
@@ -384,9 +384,9 @@ export const translations: Record<Locale, TranslationSchema> = {
       whyPoint1Title: "Established in Germany",
       whyPoint1Desc:
         "Located in Germany, operating with local regulatory adherence, verifiable corporate standards, and direct European institutional knowledge.",
-      whyPoint2Title: "No False Promises or Guarantees",
+      whyPoint2Title: "Authentic & Objective Guidance",
       whyPoint2Desc:
-        "We never promise visas, admission passes, or interview outcomes. We respect institutional autonomy and provide realistic evaluations.",
+        "We provide thorough, realistic evaluations and dependable counsel tailored to your qualifications and career aspirations.",
       whyPoint3Title: "Strict GDPR Data Protection",
       whyPoint3Desc:
         "Your data is processed in accordance with European General Data Protection Regulations. Data minimization is strictly practiced.",
@@ -423,7 +423,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       coreValuesEyebrow: "Core Values",
       coreValuesTitle: "Principles That Guide Every Engagement",
       value1Title: "Integrity & Honesty",
-      value1Desc: "Transparent information with zero false promises. We do not sell visas or guarantees.",
+      value1Desc: "Transparent, reliable guidance built on honest communication, verified information, and professional ethics.",
       value2Title: "Data Protection & Privacy",
       value2Desc: "Full GDPR compliance. Data is treated confidentially and never commercialized.",
       value3Title: "Equal Opportunity",
@@ -570,7 +570,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       whatsappOnline: "Online & Aktiv",
       gdprCompliant: "DSGVO-konforme Datensparsamkeit",
       germanCompliance: "Deutsches Impressum & Rechtskonformität",
-      zeroGuarantees: "Keine unbegründeten Erfolgsversprechen",
+      zeroGuarantees: "Geprüfte Beratung aus Deutschland",
       servingNotice: "Tätig aus Deutschland · Für Klienten in ganz Europa & weltweit",
       followUs: "Folgen Sie uns",
       socialChannels: "Soziale Medien",
@@ -661,7 +661,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       ctaEvents: "Internationale Events",
       trust1: "DSGVO-konforme Datensparsamkeit",
       trust2: "Deutsches Impressum & Rechtskonformität",
-      trust3: "Keine unbegründeten Erfolgsversprechen",
+      trust3: "Direkte Beratung aus Deutschland",
       pillarsEyebrow: "Unsere drei Kernbereiche",
       pillarsTitle: "Professionelles europäisches Tor",
       pillarsSubtitle:
@@ -689,9 +689,9 @@ export const translations: Record<Locale, TranslationSchema> = {
       whyPoint1Title: "Ansässig in Deutschland",
       whyPoint1Desc:
         "Standort in Deutschland mit strikter Einhaltung gesetzlicher Vorgaben, verifizierbaren Standards und direktem Wissen über europäische Institutionen.",
-      whyPoint2Title: "Keine falschen Versprechungen",
+      whyPoint2Title: "Verlässliche & objektive Beratung",
       whyPoint2Desc:
-        "Wir versprechen keine Visa, Studienplatzgarantien oder Vorstellungsgespräche. Wir respektieren die Autonomie der Institutionen und bewerten realistisch.",
+        "Fundierte, realistische Einschätzungen und professionelle Begleitung, individuell abgestimmt auf Ihre Qualifikationen und Ziele.",
       whyPoint3Title: "Strenger DSGVO-Datenschutz",
       whyPoint3Desc:
         "Ihre Daten werden streng nach der europäischen Datenschutz-Grundverordnung verarbeitet. Datensparsamkeit wird konsequent umgesetzt.",
@@ -728,7 +728,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       coreValuesEyebrow: "Grundwerte",
       coreValuesTitle: "Prinzipien, die jedes Handeln leiten",
       value1Title: "Integrität & Ehrlichkeit",
-      value1Desc: "Transparente Fakten ohne falsche Zusagen. Wir verkaufen weder Visa noch Scheingarantien.",
+      value1Desc: "Transparente, verlässliche Beratung auf Basis geprüfter Fakten, ethischer Grundsätze und offener Kommunikation.",
       value2Title: "Datenschutz & Vertraulichkeit",
       value2Desc: "Volle DSGVO-Konformität. Daten werden vertraulich behandelt und keinesfalls veräußert.",
       value3Title: "Chancengleichheit",
