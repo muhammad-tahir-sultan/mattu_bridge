@@ -200,12 +200,12 @@ export default function AboutContent() {
 
             <div className="rounded-2xl border border-gray-200 bg-gray-50/50 p-6">
               <h3 className="font-display text-lg font-bold text-gray-900 mb-2">
-                {isDe ? "Keine Scheingarantien" : "No Outcome Guarantees"}
+                {isDe ? "Ethische & transparente Beratung" : "Ethical & Transparent Consulting"}
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
                 {isDe
-                  ? "Wir stehen für seriöse, ethische Beratung. Zulassungsentscheidungen, Visaerteilungen und Arbeitsverträge obliegen ausschließlich den zuständigen Behörden und Arbeitgebern. Wir geben keine falschen Heilsversprechen."
-                  : "We believe in ethical consulting. Admission decisions, visa grants, and employment offers rest solely with sovereign authorities and independent employers. We do not make deceptive promises."}
+                  ? "Wir stehen für seriöse, werteorientierte Zusammenarbeit. Wir begleiten Studierende und Fachkräfte mit fundierter Fachberatung, realistischen Perspektiven und verlässlicher Unterstützung."
+                  : "We stand for authentic, value-driven collaboration. We guide students and professionals with sound advisory, realistic pathways, and dependable institutional support."}
               </p>
             </div>
 

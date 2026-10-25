@@ -142,34 +142,6 @@ export default function ContactContent() {
                 </p>
                 <SocialLinks variant="mobile" />
               </div>
-
-              {/* Compliance Notice */}
-              <div className="rounded-2xl border border-gray-200 bg-white p-5 text-xs text-gray-600 space-y-2">
-                <div className="flex items-center gap-2 text-primary-700 font-bold">
-                  <ShieldCheck className="h-4 w-4" />
-                  <span>{t.contact.privacyNoticeTitle}</span>
-                </div>
-                <p>
-                  {t.contact.privacyNoticeDesc}
-                </p>
-                <p>
-                  {locale === "de" ? (
-                    <>
-                      Unsere ladungsfähige Anschrift für offizielle Mitteilungen finden Sie im{" "}
-                      <a href="/impressum" className="text-primary-700 underline font-semibold">
-                        Impressum
-                      </a>.
-                    </>
-                  ) : (
-                    <>
-                      Our statutory address for official notices is provided in our{" "}
-                      <a href="/impressum" className="text-primary-700 underline font-semibold">
-                        Impressum
-                      </a>.
-                    </>
-                  )}
-                </p>
-              </div>
             </div>
 
             {/* Main Contact Form */}

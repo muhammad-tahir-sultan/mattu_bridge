@@ -242,53 +242,6 @@ export default function JobsContent() {
           </div>
         </div>
       </section>
-
-      {/* Legal & Compliance Safeguards */}
-      <section className="section-padding bg-white">
-        <div className="section-container max-w-4xl">
-          <div className="rounded-3xl border border-primary-200 bg-primary-50/50 p-8 md:p-10">
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-primary-700 text-white">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <div className="space-y-3">
-                <h3 className="font-display text-2xl font-bold text-gray-900">
-                  {t.jobs.complianceTitle}
-                </h3>
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  {t.jobs.complianceDesc}
-                </p>
-                <ul className="space-y-2 text-xs text-gray-700 list-disc pl-5">
-                  <li>
-                    <strong>{isDe ? "Keine Garantien:" : "No Guarantees:"}</strong>{" "}
-                    {isDe
-                      ? "Wir garantieren keine Arbeitsverträge, Vorstellungsgespräche, Visaerteilungen oder Mindesteinkommen."
-                      : "We do not guarantee employment, job interviews, visa issuance, residence permits, or specific earnings."}
-                  </li>
-                  <li>
-                    <strong>{isDe ? "Vermittlungsrolle:" : "Agency Classification:"}</strong>{" "}
-                    {isDe
-                      ? "Mattu Bridge agiert als Personalvermittler und betreibt keine gewerbsmäßige Arbeitnehmerüberlassung (AÜG), sofern nicht gesetzlich separat zugelassen."
-                      : "Mattu Bridge does not operate as a temporary staffing or employee-leasing agency (AÜG) unless expressly authorized under statutory provisions."}
-                  </li>
-                  <li>
-                    <strong>{isDe ? "Bewerberschutz:" : "Candidate Protection:"}</strong>{" "}
-                    {isDe
-                      ? "Bewerberdaten werden niemals öffentlich publiziert und erst nach expliziter Zustimmung an Arbeitgeber übermittelt."
-                      : "Candidate information is never published publicly and is shared with employers only after candidate consent."}
-                  </li>
-                  <li>
-                    <strong>{isDe ? "Arbeitgeberprüfung:" : "Employer Verification:"}</strong>{" "}
-                    {isDe
-                      ? "Eingereichte Stellenangebote werden vor Freischaltung auf Seriosität und Gesetzeskonformität geprüft."
-                      : "Vacancies submitted by employers undergo review before publication on our job board."}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

@@ -429,8 +429,8 @@ export default function HomePage() {
               </h2>
               <p className="text-base text-gray-600 leading-relaxed mb-6">
                 {locale === "de"
-                  ? "Durchsuchen Sie Wohnmöglichkeiten in Deutschland und Europa für internationale Studierende und stellen Sie eine direkte Anfrage über Mattu Bridge. Wir garantieren keine Unterkunft, es sei denn, sie wird vom offiziellen Unterkunftsgeber bestätigt."
-                  : "Browse accommodation options available in Germany and Europe for international students and submit an enquiry directly through Mattu Bridge. We do not guarantee accommodation unless confirmed by the accommodation provider."}
+                  ? "Durchsuchen Sie Wohnmöglichkeiten in Deutschland und Europa für internationale Studierende und stellen Sie eine direkte Anfrage über Mattu Bridge für eine reibungslose Koordination."
+                  : "Browse accommodation options available in Germany and Europe for international students and submit an enquiry directly through Mattu Bridge for seamless coordination."}
               </p>
 
               <div className="grid grid-cols-2 gap-3 mb-8">
@@ -746,6 +746,17 @@ export default function HomePage() {
               ? "Offizielle Betreuung mit Sitz in Deutschland · Wir antworten in der Regel innerhalb von 1-2 Werktagen."
               : "Official communications handled from Germany · Please allow 1-2 business days for structured responses."}
           </p>
+
+          {/* Disclaimer at bottom of Home Page under Contact Section */}
+          <div className="mt-8 rounded-2xl border border-white/15 bg-white/5 p-5 text-xs text-gray-300 leading-relaxed text-left max-w-2xl mx-auto backdrop-blur-sm">
+            <p className="font-semibold text-primary-200 mb-1.5 flex items-center gap-2 text-xs">
+              <ShieldCheck className="h-4 w-4 text-primary-400 flex-shrink-0" />
+              <span>{t.footer.importantInfo}</span>
+            </p>
+            <p className="text-gray-300 text-[11px] sm:text-xs leading-relaxed">
+              {t.footer.disclaimer}
+            </p>
+          </div>
         </div>
       </section>
     </div>

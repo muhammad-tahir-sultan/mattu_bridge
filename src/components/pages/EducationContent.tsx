@@ -147,15 +147,6 @@ export default function EducationContent() {
                     ? "Mattu Bridge bietet Ihnen strukturierte Unterstützung, damit Sie Ihre Optionen klar verstehen, fundierte Entscheidungen treffen und vollständige Bewerbungen einreichen können."
                     : "Mattu Bridge provides structured guidance to help you understand your options, make informed decisions, and submit thorough applications."}
                 </p>
-
-                {/* Important Disclaimer Alert */}
-                <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 text-xs text-amber-900 leading-relaxed flex items-start gap-3">
-                  <ShieldAlert className="h-5 w-5 text-amber-700 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold mb-0.5">{t.education.disclaimerTitle}:</p>
-                    <p>{t.education.disclaimerDesc}</p>
-                  </div>
-                </div>
               </div>
 
               <div className="mt-8">

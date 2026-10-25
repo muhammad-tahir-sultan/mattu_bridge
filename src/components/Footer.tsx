@@ -29,13 +29,6 @@ export default function Footer() {
               </p>
               <SocialLinks variant="footer" showLabels={true} />
             </div>
-
-            <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-xs text-gray-300">
-              <div className="flex items-start gap-2.5">
-                <ShieldCheck className="h-5 w-5 text-primary-300 flex-shrink-0 mt-0.5" />
-                <p>{t.footer.gdprNotice}</p>
-              </div>
-            </div>
           </div>
 
           {/* Core Services */}
@@ -198,14 +191,6 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Regulatory Disclaimer Banner */}
-        <div className="mt-12 rounded-xl border border-amber-400/20 bg-amber-500/10 p-4 text-xs leading-relaxed text-amber-200">
-          <p className="font-semibold text-amber-100 mb-1">
-            {t.footer.importantInfo}
-          </p>
-          <p>{t.footer.disclaimer}</p>
         </div>
       </div>
 
