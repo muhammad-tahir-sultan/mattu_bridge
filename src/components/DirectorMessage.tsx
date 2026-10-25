@@ -37,7 +37,16 @@ export default function DirectorMessage({ id = "director-message" }: DirectorMes
 
               <div className="space-y-3.5 text-sm sm:text-base leading-relaxed text-gray-700">
                 {messageData.paragraphs.map((p, idx) => (
-                  <p key={idx} className={idx === 0 ? "font-semibold text-gray-900" : ""}>
+                  <p
+                    key={idx}
+                    className={
+                      idx === 0
+                        ? "font-display text-base sm:text-lg font-bold text-gray-950"
+                        : idx === messageData.paragraphs.length - 1
+                        ? "font-semibold text-primary-900 italic pt-2 text-base sm:text-lg"
+                        : ""
+                    }
+                  >
                     {p}
                   </p>
                 ))}

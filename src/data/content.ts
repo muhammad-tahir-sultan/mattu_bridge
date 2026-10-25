@@ -46,13 +46,16 @@ export const directorMessage = {
   heading: "Director's Welcome Message",
   paragraphs: [
     "Welcome to Mattu Bridge.",
-    "My journey has been shaped by an interest in human rights, education, equal opportunities, and the importance of creating meaningful connections between people and institutions.",
-    "With this background and vision, Mattu Bridge has been established to bring educational opportunities, professional pathways, and international initiatives together under one platform.",
-    "Our aim is to provide a professional and accessible point of contact for students, job seekers, employers, organizations, and individuals interested in international collaboration.",
-    "We believe that access to education, fair opportunities, and constructive cooperation can make a meaningful difference in people's lives.",
-    "Thank you for visiting Mattu Bridge. We look forward to hearing from you and exploring opportunities for cooperation.",
+    "My professional journey has been shaped by a longstanding commitment to human rights, education, equal opportunities, social inclusion, and the belief that every individual deserves the opportunity to build a better future.",
+    "Over the past two decades, I have gained experience in human rights advocacy, modern slavery, education, community integration, and initiatives supporting marginalised and underserved communities. Through my involvement with community-based organisations and humanitarian initiatives, I have witnessed both the challenges people face and the transformative power of education, meaningful employment, and access to opportunities.",
+    "My international exposure, including visits to and exploration of more than 40 countries, has broadened my understanding of different cultures, communities, educational systems, and professional environments. These experiences have strengthened my belief that connecting people with the right opportunities can create lasting and positive change.",
+    "Driven by this experience and a belief in equal opportunities, I established Mattu Bridge to connect people with meaningful educational and professional pathways while fostering international cooperation.",
+    "Our three core pillars — Educational Consultancy, Employment Placement/Recruitment, and International Events — reflect our commitment to empowering individuals, connecting institutions and organisations, and creating opportunities across Germany, Europe, and beyond.",
+    "For me, Mattu Bridge is more than a business; it is a continuation of a journey built on purpose, inclusion, and the belief that education, meaningful employment, and international collaboration can create lasting positive change.",
+    "I warmly welcome students, job seekers, employers, institutions, and partners to join us in building bridges to new opportunities.",
+    "Let us connect people, opportunities, and possibilities.",
   ],
-  signOff: "IA Mattu",
+  signOff: "I.A Mattu",
   title: "Director, Mattu Bridge",
 };
 
