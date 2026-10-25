@@ -112,7 +112,7 @@ export default function JobListingsPage() {
         trustHighlights={[
           { text: isDe ? "Rechtlich geprüft" : "Pre-vetted Roles" },
           { text: isDe ? "Direktbewerbung" : "Direct Application" },
-          { text: isDe ? "Kostenlos für Bewerber" : "Free for Applicants" },
+          { text: isDe ? "DSGVO-konform" : "GDPR-compliant" },
         ]}
       />
 

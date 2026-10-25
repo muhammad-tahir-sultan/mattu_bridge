@@ -99,7 +99,7 @@ export default function JobsContent() {
           </>
         }
         trustHighlights={[
-          { text: isDe ? "Kostenlose Registrierung" : "Free Candidate Intake" },
+          { text: isDe ? "Direktvermittlung" : "Direct Placement" },
           { text: isDe ? "Geprüfte Arbeitgeber" : "Vetted EU Employers" },
           { text: isDe ? "Rechtlich konform" : "Legally Compliant" },
         ]}
@@ -132,7 +132,7 @@ export default function JobsContent() {
                 <ul className="space-y-2.5 text-sm text-gray-700 mb-8">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                    <span>{isDe ? "Kostenfreie Registrierung für Bewerber" : "Free registration for job seekers"}</span>
+                    <span>{isDe ? "Strukturierte Registrierung für Bewerber" : "Structured intake for job seekers"}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-600" />

@@ -105,7 +105,7 @@ export default function EducationContent() {
           </>
         }
         trustHighlights={[
-          { text: isDe ? "Keine Aufnahmegebühren" : "No upfront fees" },
+          { text: isDe ? "Anerkannte Programme" : "Accredited Programs" },
           { text: isDe ? "Uni-Assist Beratung" : "Uni-Assist Guidance" },
           { text: isDe ? "DSGVO-konform" : "GDPR-compliant" },
         ]}

@@ -439,7 +439,7 @@ export default function HomePage() {
                     {locale === "de" ? "Mietvertragshilfe" : "Lease Support"}
                   </p>
                   <p className="text-[11px] text-gray-500">
-                    {locale === "de" ? "Transparente Konditionen" : "Transparent terms, zero hidden fees"}
+                    {locale === "de" ? "Transparente Konditionen" : "Transparent terms & verified conditions"}
                   </p>
                 </div>
                 <div className="rounded-xl border border-gray-200 bg-white p-3.5 shadow-sm">

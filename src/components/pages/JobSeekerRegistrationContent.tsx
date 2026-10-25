@@ -22,13 +22,12 @@ export default function JobSeekerRegistrationContent() {
         imageUrl={images.viennaBuilding}
         heroImage={images.careerCandidate}
         heroImageAlt="Candidate consultation in Germany"
-        heroBadge={isDe ? "📝 Kostenfreie Registrierung" : "📝 Free Candidate Intake"}
+        heroBadge={isDe ? "📝 Bewerber-Profil" : "📝 Candidate Intake"}
         secondaryImage={images.warehouseWorkers}
         secondaryTitle={isDe ? "Direktvermittlung" : "Direct Placement"}
         secondarySubtitle={isDe ? "DSGVO-konform · Vertraulich" : "GDPR Compliant · Confidential"}
         trustHighlights={[
           { text: isDe ? "Keine Pflicht-Uploads" : "Optional CV upload" },
-          { text: isDe ? "100% Kostenfrei" : "Zero Fees for Applicants" },
           { text: isDe ? "Datenschutz garantiert" : "Full GDPR Privacy" },
         ]}
       />

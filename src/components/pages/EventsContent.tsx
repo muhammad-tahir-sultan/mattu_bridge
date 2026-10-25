@@ -48,7 +48,7 @@ export default function EventsContent() {
         trustHighlights={[
           { text: isDe ? "Internationale Referenten" : "International Speakers" },
           { text: isDe ? "Wissenstransfer" : "Knowledge Transfer" },
-          { text: isDe ? "Kostenfreie Teilnahme" : "Free Registrations" },
+          { text: isDe ? "Interkultureller Dialog" : "Cross-Border Dialogue" },
         ]}
       />
 
