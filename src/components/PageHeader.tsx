@@ -32,7 +32,7 @@ export default function PageHeader({
   trustHighlights,
 }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden bg-primary-950 py-16 md:py-24 text-white">
+    <section className="relative overflow-hidden bg-primary-950 py-10 sm:py-14 lg:py-16 text-white">
       {/* Background image if provided */}
       {imageUrl && (
         <div className="absolute inset-0">
@@ -58,40 +58,40 @@ export default function PageHeader({
         <div
           className={
             heroImage
-              ? "grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center"
+              ? "grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center"
               : "max-w-3xl"
           }
         >
           {/* Text & Content Column */}
           <div className={heroImage ? "lg:col-span-7" : ""}>
             {eyebrow && (
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-semibold text-primary-200 backdrop-blur-md">
-                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-primary-200 backdrop-blur-md">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 <span>{eyebrow}</span>
               </div>
             )}
 
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-white">
+            <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white">
               {title}
             </h1>
 
             {description && (
-              <p className="mt-4 text-base md:text-lg leading-relaxed text-gray-300 max-w-2xl">
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-gray-300 max-w-2xl">
                 {description}
               </p>
             )}
 
             {actionButtons && (
-              <div className="mt-7 flex flex-wrap items-center gap-3">
+              <div className="mt-5 flex flex-wrap items-center gap-2.5">
                 {actionButtons}
               </div>
             )}
 
             {trustHighlights && trustHighlights.length > 0 && (
-              <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3 pt-6 border-t border-white/10 text-xs text-gray-300">
+              <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-4 border-t border-white/10 text-xs text-gray-300">
                 {trustHighlights.map((t, idx) => (
-                  <div key={idx} className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
+                  <div key={idx} className="flex items-center gap-1.5">
+                    <CheckCircle className="h-3.5 w-3.5 text-emerald-400 flex-shrink-0" />
                     <span>{t.text}</span>
                   </div>
                 ))}

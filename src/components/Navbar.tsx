@@ -111,7 +111,7 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <div className="w-full max-w-[92rem] mx-auto px-3 sm:px-6 lg:px-8 flex h-16 sm:h-20 items-center justify-between gap-2 sm:gap-4">
+      <div className="w-full max-w-[92rem] mx-auto px-3 sm:px-6 lg:px-8 flex h-14 sm:h-16 items-center justify-between gap-2 sm:gap-4">
         <Logo />
 
         {/* Desktop Navigation */}

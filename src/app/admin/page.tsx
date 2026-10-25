@@ -216,7 +216,7 @@ export default function AdminPage() {
                   setActiveTab(tab.id as any);
                   setSelectedItem(null);
                 }}
-                className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold transition-all ${
+                className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold transition-all ${
                   active
                     ? "bg-primary-700 text-white shadow-md"
                     : "text-gray-700 hover:bg-gray-100 hover:text-gray-950"
@@ -249,7 +249,7 @@ export default function AdminPage() {
                   </span>
                   <GraduationCap className="h-5 w-5 text-primary-600" />
                 </div>
-                <div className="font-display text-3xl font-bold text-gray-900">
+                <div className="font-display text-2xl font-bold text-gray-900">
                   {studentEnquiries.length}
                 </div>
                 <p className="text-xs text-gray-500 mt-1">Study preferences logged</p>
@@ -262,7 +262,7 @@ export default function AdminPage() {
                   </span>
                   <Briefcase className="h-5 w-5 text-primary-600" />
                 </div>
-                <div className="font-display text-3xl font-bold text-gray-900">
+                <div className="font-display text-2xl font-bold text-gray-900">
                   {jobSeekers.length}
                 </div>
                 <p className="text-xs text-gray-500 mt-1">Candidate profiles registered</p>
@@ -275,7 +275,7 @@ export default function AdminPage() {
                   </span>
                   <Building2 className="h-5 w-5 text-primary-600" />
                 </div>
-                <div className="font-display text-3xl font-bold text-gray-900">
+                <div className="font-display text-2xl font-bold text-gray-900">
                   {employerSubmissions.length}
                 </div>
                 <p className="text-xs text-gray-500 mt-1">Vacancy submissions &amp; requests</p>
@@ -288,7 +288,7 @@ export default function AdminPage() {
                   </span>
                   <CheckCircle className="h-5 w-5 text-emerald-600" />
                 </div>
-                <div className="font-display text-3xl font-bold text-gray-900">
+                <div className="font-display text-2xl font-bold text-gray-900">
                   {jobListings.filter((j) => j.isApproved).length}
                 </div>
                 <p className="text-xs text-gray-500 mt-1">Approved &amp; visible vacancies</p>
@@ -359,26 +359,26 @@ export default function AdminPage() {
         {/* Tab 2: Students */}
         {activeTab === "students" && (
           <div className="space-y-6">
-            <h3 className="font-display text-xl font-bold text-gray-900">
+            <h3 className="font-display text-base sm:text-lg font-bold text-gray-900">
               Student Enquiries ({studentEnquiries.length})
             </h3>
             {studentEnquiries.length === 0 ? (
-              <div className="rounded-2xl border border-dashed border-gray-300 bg-white p-10 text-center text-sm text-gray-500">
+              <div className="rounded-2xl border border-dashed border-gray-300 bg-white p-8 text-center text-xs sm:text-sm text-gray-500">
                 No student enquiries logged yet. Fill out the enquiry form on the Education page to test!
               </div>
             ) : (
               <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
                 <table className="w-full text-left text-xs">
-                  <thead className="border-b border-gray-100 bg-gray-50/70 font-semibold text-gray-700">
+                  <thead className="border-b border-gray-100 bg-gray-50/70 font-semibold text-gray-700 text-[11px] sm:text-xs">
                     <tr>
-                      <th className="p-3.5">Date</th>
-                      <th className="p-3.5">Name</th>
-                      <th className="p-3.5">Email</th>
-                      <th className="p-3.5">Destination</th>
-                      <th className="p-3.5">Study Level</th>
-                      <th className="p-3.5">Subject</th>
-                      <th className="p-3.5">Documents</th>
-                      <th className="p-3.5 text-right">Actions</th>
+                      <th className="p-2.5 sm:p-3">Date</th>
+                      <th className="p-2.5 sm:p-3">Name</th>
+                      <th className="p-2.5 sm:p-3">Email</th>
+                      <th className="p-2.5 sm:p-3">Destination</th>
+                      <th className="p-2.5 sm:p-3">Study Level</th>
+                      <th className="p-2.5 sm:p-3">Subject</th>
+                      <th className="p-2.5 sm:p-3">Documents</th>
+                      <th className="p-2.5 sm:p-3 text-right">Actions</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100 text-gray-600">
@@ -437,26 +437,26 @@ export default function AdminPage() {
         {/* Tab 3: Job Seekers */}
         {activeTab === "jobSeekers" && (
           <div className="space-y-6">
-            <h3 className="font-display text-xl font-bold text-gray-900">
+            <h3 className="font-display text-base sm:text-lg font-bold text-gray-900">
               Registered Candidate Profiles ({jobSeekers.length})
             </h3>
             {jobSeekers.length === 0 ? (
-              <div className="rounded-2xl border border-dashed border-gray-300 bg-white p-10 text-center text-sm text-gray-500">
+              <div className="rounded-2xl border border-dashed border-gray-300 bg-white p-8 text-center text-xs sm:text-sm text-gray-500">
                 No job seekers registered yet. Submit the registration form on the Job Seeker page to test!
               </div>
             ) : (
               <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
                 <table className="w-full text-left text-xs">
-                  <thead className="border-b border-gray-100 bg-gray-50/70 font-semibold text-gray-700">
+                  <thead className="border-b border-gray-100 bg-gray-50/70 font-semibold text-gray-700 text-[11px] sm:text-xs">
                     <tr>
-                      <th className="p-3.5">Date</th>
-                      <th className="p-3.5">Candidate Name</th>
-                      <th className="p-3.5">Email</th>
-                      <th className="p-3.5">Category</th>
-                      <th className="p-3.5">Target Country</th>
-                      <th className="p-3.5">Experience</th>
-                      <th className="p-3.5">Code 95</th>
-                      <th className="p-3.5 text-right">Actions</th>
+                      <th className="p-2.5 sm:p-3">Date</th>
+                      <th className="p-2.5 sm:p-3">Candidate Name</th>
+                      <th className="p-2.5 sm:p-3">Email</th>
+                      <th className="p-2.5 sm:p-3">Category</th>
+                      <th className="p-2.5 sm:p-3">Target Country</th>
+                      <th className="p-2.5 sm:p-3">Experience</th>
+                      <th className="p-2.5 sm:p-3">Code 95</th>
+                      <th className="p-2.5 sm:p-3 text-right">Actions</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100 text-gray-600">
@@ -513,25 +513,25 @@ export default function AdminPage() {
         {/* Tab 4: Employer Submissions */}
         {activeTab === "employers" && (
           <div className="space-y-6">
-            <h3 className="font-display text-xl font-bold text-gray-900">
+            <h3 className="font-display text-base sm:text-lg font-bold text-gray-900">
               Employer Submissions &amp; Vacancies ({employerSubmissions.length})
             </h3>
             {employerSubmissions.length === 0 ? (
-              <div className="rounded-2xl border border-dashed border-gray-300 bg-white p-10 text-center text-sm text-gray-500">
+              <div className="rounded-2xl border border-dashed border-gray-300 bg-white p-8 text-center text-xs sm:text-sm text-gray-500">
                 No employer submissions logged yet. Fill out the Employer Enquiry form to test!
               </div>
             ) : (
               <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
                 <table className="w-full text-left text-xs">
-                  <thead className="border-b border-gray-100 bg-gray-50/70 font-semibold text-gray-700">
+                  <thead className="border-b border-gray-100 bg-gray-50/70 font-semibold text-gray-700 text-[11px] sm:text-xs">
                     <tr>
-                      <th className="p-3.5">Date</th>
-                      <th className="p-3.5">Company</th>
-                      <th className="p-3.5">Contact Person</th>
-                      <th className="p-3.5">Type</th>
-                      <th className="p-3.5">Job Title</th>
-                      <th className="p-3.5">Status</th>
-                      <th className="p-3.5 text-right">Actions</th>
+                      <th className="p-2.5 sm:p-3">Date</th>
+                      <th className="p-2.5 sm:p-3">Company</th>
+                      <th className="p-2.5 sm:p-3">Contact Person</th>
+                      <th className="p-2.5 sm:p-3">Type</th>
+                      <th className="p-2.5 sm:p-3">Job Title</th>
+                      <th className="p-2.5 sm:p-3">Status</th>
+                      <th className="p-2.5 sm:p-3 text-right">Actions</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100 text-gray-600">
@@ -586,7 +586,7 @@ export default function AdminPage() {
         {activeTab === "jobs" && (
           <div className="space-y-6">
             <div className="flex items-center justify-between">
-              <h3 className="font-display text-xl font-bold text-gray-900">
+              <h3 className="font-display text-base sm:text-lg font-bold text-gray-900">
                 Job Listings Management ({jobListings.length})
               </h3>
               <p className="text-xs text-gray-500">
@@ -661,7 +661,7 @@ export default function AdminPage() {
         {/* Tab 6: Messages */}
         {activeTab === "messages" && (
           <div className="space-y-6">
-            <h3 className="font-display text-xl font-bold text-gray-900">
+            <h3 className="font-display text-base sm:text-lg font-bold text-gray-900">
               Contact Form Inquiries ({contactMessages.length})
             </h3>
             {contactMessages.length === 0 ? (
@@ -714,19 +714,19 @@ export default function AdminPage() {
         {/* Item Detail Inspector Drawer */}
         {selectedItem && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm animate-in fade-in duration-200">
-            <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-6 md:p-8 shadow-2xl">
+            <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-5 sm:p-6 md:p-7 shadow-2xl">
               <button
                 type="button"
                 onClick={() => setSelectedItem(null)}
-                className="absolute right-5 top-5 rounded-full p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-700"
+                className="absolute right-4 top-4 rounded-full p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-700"
               >
                 <XCircle className="h-5 w-5" />
               </button>
 
-              <h3 className="font-display text-2xl font-bold text-gray-900 mb-1">
+              <h3 className="font-display text-lg sm:text-xl font-bold text-gray-900 mb-1">
                 Submission Record Inspector
               </h3>
-              <p className="text-xs text-gray-400 mb-4">
+              <p className="text-[11px] sm:text-xs text-gray-400 mb-3">
                 Record ID: {selectedItem.id} · Received: {new Date(selectedItem.date).toLocaleString()}
               </p>
 

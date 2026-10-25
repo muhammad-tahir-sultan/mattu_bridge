@@ -50,18 +50,18 @@ export default function HomePage() {
           <div className="absolute -left-24 bottom-10 h-96 w-96 rounded-full bg-accent-500/15 blur-3xl" />
         </div>
 
-        <div className="section-container relative z-10 py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="section-container relative z-10 py-10 sm:py-14 lg:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Text & Actions */}
             <div className="lg:col-span-7">
               {/* Pill Badge */}
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold text-primary-200 backdrop-blur-md">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-semibold text-primary-200 backdrop-blur-md">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>{t.home.badge}</span>
               </div>
 
               {/* Main Heading */}
-              <h1 className="font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl text-white">
+              <h1 className="font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-[2.65rem] text-white">
                 {locale === "de" ? (
                   <>
                     Brücken bauen zu{" "}
@@ -78,34 +78,34 @@ export default function HomePage() {
               </h1>
 
               {/* Supporting Text */}
-              <p className="mt-6 text-base leading-relaxed text-gray-300 md:text-lg max-w-2xl">
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-gray-300 max-w-2xl">
                 {t.home.subtitle}
               </p>
 
               {/* Primary Action Buttons */}
-              <div className="mt-8 flex flex-wrap items-center gap-3.5">
-                <Link href="/education" className="btn-primary !py-3.5 !px-6 text-sm shadow-xl shadow-primary-900/30">
-                  <GraduationCap className="h-5 w-5" />
+              <div className="mt-6 flex flex-wrap items-center gap-2.5">
+                <Link href="/education" className="btn-primary !py-2.5 !px-5 text-xs sm:text-sm shadow-xl shadow-primary-900/30">
+                  <GraduationCap className="h-4 w-4" />
                   <span>{locale === "de" ? "Studienchancen entdecken" : "Explore Study Opportunities"}</span>
                 </Link>
                 <Link
                   href="/jobs"
-                  className="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10 !py-3.5 !px-6 text-sm"
+                  className="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10 !py-2.5 !px-5 text-xs sm:text-sm"
                 >
-                  <Briefcase className="h-5 w-5" />
+                  <Briefcase className="h-4 w-4" />
                   <span>{locale === "de" ? "Jobchancen finden" : "Find Job Opportunities"}</span>
                 </Link>
                 <Link
                   href="/events"
-                  className="inline-flex items-center gap-2 rounded-lg border border-amber-400/40 bg-amber-500/10 px-5 py-3 text-sm font-semibold text-amber-200 hover:bg-amber-500/20 transition-all"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-amber-400/40 bg-amber-500/10 px-4 py-2 text-xs sm:text-sm font-semibold text-amber-200 hover:bg-amber-500/20 transition-all"
                 >
-                  <Globe className="h-4 w-4" />
+                  <Globe className="h-3.5 w-3.5" />
                   <span>{t.home.ctaEvents}</span>
                 </Link>
               </div>
 
               {/* Transparency Trust Highlights */}
-              <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-white/10 text-xs text-gray-300">
+              <div className="mt-7 grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-white/10 text-xs text-gray-300">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
                   <span>{locale === "de" ? "DSGVO-konform" : "GDPR-compliant"}</span>
@@ -697,22 +697,22 @@ export default function HomePage() {
       </section>
 
       {/* 7. Homepage Direct Contact Section */}
-      <section className="bg-primary-950 py-20 text-white">
+      <section className="bg-primary-950 py-14 sm:py-16 text-white">
         <div className="section-container text-center max-w-3xl">
           <p className="heading-eyebrow !text-primary-300 mb-2">
             {t.home.contactBannerEyebrow}
           </p>
-          <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
+          <h2 className="font-display text-2xl font-bold text-white md:text-3xl">
             {t.home.contactBannerTitle}
           </h2>
-          <p className="mt-4 text-base md:text-lg text-gray-300 leading-relaxed">
+          <p className="mt-3 text-sm md:text-base text-gray-300 leading-relaxed">
             {t.home.contactBannerDesc}
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href={`mailto:${siteConfig.email}`}
-              className="inline-flex items-center gap-2.5 rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-primary-950 shadow-lg hover:bg-gray-100 transition-all"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-xs sm:text-sm font-bold text-primary-950 shadow-lg hover:bg-gray-100 transition-all"
             >
               <Mail className="h-4 w-4 text-primary-700" />
               <span>{siteConfig.email}</span>
@@ -722,13 +722,13 @@ export default function HomePage() {
               href={siteConfig.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-xl border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-bold text-white hover:bg-white/20 transition-all"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-xs sm:text-sm font-bold text-white hover:bg-white/20 transition-all"
             >
               <MessageCircle className="h-4 w-4 text-emerald-400" />
               <span>WhatsApp: {siteConfig.whatsapp}</span>
             </a>
 
-            <Link href="/contact" className="btn-accent !py-3.5 !px-6 text-sm font-bold">
+            <Link href="/contact" className="btn-accent !py-2.5 !px-5 text-xs sm:text-sm font-bold">
               <span>{t.home.contactBannerCta}</span>
               <ArrowRight className="h-4 w-4" />
             </Link>

@@ -27,9 +27,34 @@
 }
 
 html {
+  font-size: 13.5px; /* Mobile (< 640px) */
   scroll-behavior: smooth;
   overflow-x: hidden;
   max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 13.75px; /* Tablets / Touchpads (640px - 1023px) */
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 14px; /* Small laptops & 1366x768 (1024px - 1279px) */
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 14.5px; /* Standard laptops (1280px - 1535px, 14"-16") */
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 15px; /* Large desktop displays (1536px+) */
+  }
 }
 
 body {
@@ -67,50 +92,62 @@ h1, h2, h3, h4, .font-display {
 }
 
 .section-padding {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
 }
 @media (min-width: 768px) {
   .section-padding {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .section-padding {
+    padding-top: 4.75rem;
+    padding-bottom: 4.75rem;
   }
 }
 
 .heading-eyebrow {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: var(--color-primary-600);
 }
 
 .heading-2 {
   font-family: var(--font-display);
-  font-size: 2rem;
-  line-height: 2.25rem;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
   font-weight: 700;
   color: #111827;
 }
 @media (min-width: 768px) {
   .heading-2 {
-    font-size: 2.5rem;
-    line-height: 2.75rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .heading-2 {
+    font-size: 2.125rem;
+    line-height: 2.5rem;
   }
 }
 
 .heading-3 {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   font-weight: 700;
   color: #111827;
 }
 @media (min-width: 768px) {
   .heading-3 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+    font-size: 1.375rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -121,9 +158,9 @@ h1, h2, h3, h4, .font-display {
   gap: 0.5rem;
   border-radius: 0.5rem;
   background-color: var(--color-primary-700);
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
   font-weight: 600;
   color: #ffffff;
   transition: all 0.2s ease-in-out;
@@ -146,9 +183,9 @@ h1, h2, h3, h4, .font-display {
   border-radius: 0.5rem;
   border: 2px solid var(--color-primary-700);
   background-color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
   font-weight: 600;
   color: var(--color-primary-700);
   transition: all 0.2s ease-in-out;
@@ -168,9 +205,9 @@ h1, h2, h3, h4, .font-display {
   gap: 0.5rem;
   border-radius: 0.5rem;
   background-color: var(--color-accent-500);
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
   font-weight: 600;
   color: #ffffff;
   transition: all 0.2s ease-in-out;
@@ -186,12 +223,17 @@ h1, h2, h3, h4, .font-display {
 }
 
 .card {
-  border-radius: 1rem;
+  border-radius: 0.875rem;
   border: 1px solid #f3f4f6;
   background-color: #ffffff;
-  padding: 1.75rem;
+  padding: 1.25rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (min-width: 768px) {
+  .card {
+    padding: 1.5rem;
+  }
 }
 .card:hover {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
