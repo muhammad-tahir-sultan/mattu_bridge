@@ -281,7 +281,7 @@ export default function AdminPage() {
           {/* Logo & Header */}
           <div className="text-center mb-6">
             <div className="inline-block mb-3">
-              <Logo isDark={true} />
+              <Logo isDark={true} variant="full" />
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-emerald-300 mb-2">
               <Lock className="h-3 w-3" />
