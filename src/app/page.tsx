@@ -12,12 +12,10 @@ import {
   Building,
   UserCheck,
   Calendar,
-  Mail,
   MessageCircle,
   ChevronRight,
 } from "lucide-react";
 import DirectorMessage from "@/components/DirectorMessage";
-import SocialLinks from "@/components/SocialLinks";
 import { images } from "@/data/images";
 import { siteConfig } from "@/data/content";
 import { initialJobListings } from "@/data/jobsData";
@@ -696,69 +694,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. Homepage Direct Contact Section */}
-      <section className="bg-primary-950 py-14 sm:py-16 text-white">
-        <div className="section-container text-center max-w-3xl">
-          <p className="heading-eyebrow !text-primary-300 mb-2">
-            {t.home.contactBannerEyebrow}
-          </p>
-          <h2 className="font-display text-2xl font-bold text-white md:text-3xl">
-            {t.home.contactBannerTitle}
-          </h2>
-          <p className="mt-3 text-sm md:text-base text-gray-300 leading-relaxed">
-            {t.home.contactBannerDesc}
-          </p>
-
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-xs sm:text-sm font-bold text-primary-950 shadow-lg hover:bg-gray-100 transition-all"
-            >
-              <Mail className="h-4 w-4 text-primary-700" />
-              <span>{siteConfig.email}</span>
-            </a>
-
-            <a
-              href={siteConfig.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-xs sm:text-sm font-bold text-white hover:bg-white/20 transition-all"
-            >
-              <MessageCircle className="h-4 w-4 text-emerald-400" />
-              <span>WhatsApp: {siteConfig.whatsapp}</span>
-            </a>
-
-            <Link href="/contact" className="btn-accent !py-2.5 !px-5 text-xs sm:text-sm font-bold">
-              <span>{t.home.contactBannerCta}</span>
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-
-          <div className="mt-8 pt-6 border-t border-white/10 flex flex-col items-center justify-center gap-3">
-            <span className="text-xs uppercase tracking-wider font-semibold text-primary-200">
-              {t.common.followUs}
-            </span>
-            <SocialLinks variant="footer" showLabels={true} />
-          </div>
-
-          <p className="mt-6 text-xs text-gray-400">
-            {locale === "de"
-              ? "Offizielle Betreuung mit Sitz in Deutschland · Wir antworten in der Regel innerhalb von 1-2 Werktagen."
-              : "Official communications handled from Germany · Please allow 1-2 business days for structured responses."}
-          </p>
-
-          {/* Disclaimer at bottom of Home Page under Contact Section */}
-          <div className="mt-8 rounded-2xl border border-white/15 bg-white/5 p-5 text-xs text-gray-300 leading-relaxed text-left max-w-2xl mx-auto backdrop-blur-sm">
-            <p className="font-semibold text-primary-200 mb-1.5 flex items-center gap-2 text-xs">
-              <ShieldCheck className="h-4 w-4 text-primary-400 flex-shrink-0" />
-              <span>{t.footer.importantInfo}</span>
-            </p>
-            <p className="text-gray-300 text-[11px] sm:text-xs leading-relaxed">
-              {t.footer.disclaimer}
-            </p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

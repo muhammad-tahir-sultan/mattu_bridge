@@ -196,6 +196,15 @@ export default function Footer() {
             <SocialLinks variant="footer" showLabels={true} />
           </div>
         </div>
+
+        {/* Regulatory Compliance Disclaimer */}
+        <div className="mt-8 pt-6 border-t border-white/10 flex items-start gap-2.5 text-xs text-gray-400 leading-relaxed">
+          <ShieldCheck className="h-4 w-4 text-primary-400 flex-shrink-0 mt-0.5" />
+          <p>
+            <strong className="text-gray-300 font-semibold">{t.footer.importantInfo}:</strong>{" "}
+            {t.footer.disclaimer}
+          </p>
+        </div>
       </div>
 
       {/* Bottom Bar */}
