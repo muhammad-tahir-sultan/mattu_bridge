@@ -7,17 +7,14 @@ import {
   Briefcase,
   Globe,
   ArrowRight,
-  ShieldCheck,
   CheckCircle,
   Building,
   UserCheck,
   Calendar,
-  MessageCircle,
   ChevronRight,
 } from "lucide-react";
 import DirectorMessage from "@/components/DirectorMessage";
 import { images } from "@/data/images";
-import { siteConfig } from "@/data/content";
 import { initialJobListings } from "@/data/jobsData";
 import { internationalEvents } from "@/data/eventsData";
 import { useLanguage } from "@/context/LanguageContext";
@@ -384,191 +381,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2.6 Accommodation Section (From Study Europe Preview) */}
-      <section className="section-padding bg-gray-50/70 border-b border-gray-100">
-        <div className="section-container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Image Column */}
-            <div className="lg:col-span-6 relative">
-              <div className="relative h-[360px] sm:h-[420px] rounded-3xl overflow-hidden shadow-2xl border border-gray-200 group">
-                <Image
-                  src={images.accommodation}
-                  alt="Student Accommodation in Germany & Europe - Mattu Bridge"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/95 p-4 backdrop-blur-md shadow-lg border border-gray-100">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100 text-primary-700">
-                      <Building className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-gray-900">
-                        {locale === "de" ? "Verifizierte Studentenapartments" : "Verified Student Residences"}
-                      </p>
-                      <p className="text-[11px] text-gray-500">
-                        {locale === "de" ? "WG-Zimmer, Studios & Campus-Residenzen" : "Shared flats, private studios & campus halls"}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Description Column */}
-            <div className="lg:col-span-6">
-              <p className="heading-eyebrow mb-2">
-                {locale === "de" ? "UNTERKUNFT & WOHNEN" : "ACCOMMODATION"}
-              </p>
-              <h2 className="heading-2 mb-4">
-                {locale === "de" ? "Ein Dach vor Ihrer Ankunft" : "A roof before you arrive"}
-              </h2>
-              <p className="text-base text-gray-600 leading-relaxed mb-6">
-                {locale === "de"
-                  ? "Durchsuchen Sie Wohnmöglichkeiten in Deutschland und Europa für internationale Studierende und stellen Sie eine direkte Anfrage über Mattu Bridge für eine reibungslose Koordination."
-                  : "Browse accommodation options available in Germany and Europe for international students and submit an enquiry directly through Mattu Bridge for seamless coordination."}
-              </p>
-
-              <div className="grid grid-cols-2 gap-3 mb-8">
-                <div className="rounded-xl border border-gray-200 bg-white p-3.5 shadow-sm">
-                  <p className="text-xs font-bold text-gray-900 mb-0.5">
-                    {locale === "de" ? "Mietvertragshilfe" : "Lease Support"}
-                  </p>
-                  <p className="text-[11px] text-gray-500">
-                    {locale === "de" ? "Transparente Konditionen" : "Transparent terms & verified conditions"}
-                  </p>
-                </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-3.5 shadow-sm">
-                  <p className="text-xs font-bold text-gray-900 mb-0.5">
-                    {locale === "de" ? "Wohnungsgeberbestätigung" : "City Registration Ready"}
-                  </p>
-                  <p className="text-[11px] text-gray-500">
-                    {locale === "de" ? "Für die behördliche Anmeldung" : "Official paperwork for visa & registration"}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3">
-                <Link
-                  href="/contact?topic=accommodation"
-                  className="btn-primary !py-3 !px-6 text-sm font-bold inline-flex items-center gap-2"
-                >
-                  <Building className="h-4 w-4" />
-                  <span>{locale === "de" ? "Unterkunft anfragen" : "Find Accommodation"}</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <a
-                  href={siteConfig.whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary !py-3 !px-5 text-sm font-semibold inline-flex items-center gap-2"
-                >
-                  <MessageCircle className="h-4 w-4 text-emerald-600" />
-                  <span>WhatsApp</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
       {/* 3. Director's Welcome Message Section */}
       <DirectorMessage />
 
-      {/* 4. Why Mattu Bridge Section */}
-      <section className="section-padding bg-white border-b border-gray-100">
-        <div className="section-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:items-center">
-            <div className="relative">
-              <div className="relative h-[420px] rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src={images.campus}
-                  alt="European University and Business Campus"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/70 via-transparent to-transparent" />
-              </div>
-              <div className="absolute -bottom-6 -right-6 hidden sm:block rounded-2xl bg-white p-5 shadow-xl border border-gray-100 max-w-xs">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100 text-primary-700">
-                    <ShieldCheck className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-gray-900">
-                      {locale === "de" ? "Strikte europäische Standards" : "Strict European Compliance"}
-                    </p>
-                    <p className="text-[11px] text-gray-500">
-                      {locale === "de"
-                        ? "Ethische Kommunikation & DSGVO-Datenschutz."
-                        : "Ethical communication & GDPR privacy standards."}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <p className="heading-eyebrow mb-3">{t.home.whyChooseEyebrow}</p>
-              <h2 className="heading-2 mb-6">
-                {t.home.whyChooseTitle}
-              </h2>
-              <div className="space-y-4 text-base text-gray-700 leading-relaxed">
-                <p>
-                  {t.home.whyChooseSubtitle}
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                    <h4 className="font-semibold text-gray-900 text-sm mb-1">
-                      {t.home.whyPoint1Title}
-                    </h4>
-                    <p className="text-xs text-gray-600">
-                      {t.home.whyPoint1Desc}
-                    </p>
-                  </div>
-                  <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                    <h4 className="font-semibold text-gray-900 text-sm mb-1">
-                      {t.home.whyPoint2Title}
-                    </h4>
-                    <p className="text-xs text-gray-600">
-                      {t.home.whyPoint2Desc}
-                    </p>
-                  </div>
-                  <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                    <h4 className="font-semibold text-gray-900 text-sm mb-1">
-                      {t.home.whyPoint3Title}
-                    </h4>
-                    <p className="text-xs text-gray-600">
-                      {t.home.whyPoint3Desc}
-                    </p>
-                  </div>
-                  <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                    <h4 className="font-semibold text-gray-900 text-sm mb-1">
-                      {t.home.whyPoint4Title}
-                    </h4>
-                    <p className="text-xs text-gray-600">
-                      {t.home.whyPoint4Desc}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 flex gap-4">
-                <Link href="/about" className="btn-primary !py-2.5 !px-5 text-sm">
-                  <span>{locale === "de" ? "Mehr über uns erfahren" : "Learn More About Us"}</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Featured Job Vacancies Preview */}
+      {/* 4. Featured Job Vacancies Preview */}
       <section className="section-padding bg-gray-50/70 border-b border-gray-100">
         <div className="section-container">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
