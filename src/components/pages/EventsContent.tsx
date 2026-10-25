@@ -90,7 +90,7 @@ export default function EventsContent() {
       </section>
 
       {/* Upcoming Announced Events */}
-      <section className="section-padding bg-gray-50 border-y border-gray-100">
+      <section id="upcoming-events" className="section-padding bg-gray-50 border-y border-gray-100 scroll-mt-20">
         <div className="section-container">
           <div className="mx-auto max-w-2xl text-center mb-12">
             <p className="heading-eyebrow mb-2">{t.events.upcomingEyebrow}</p>
@@ -167,7 +167,8 @@ export default function EventsContent() {
       </section>
 
       {/* Registration Section */}
-      <section id="register" className="section-padding bg-white scroll-mt-20">
+      <section id="register-event" className="section-padding bg-white scroll-mt-20">
+        <div id="register" className="scroll-mt-20" />
         <div className="section-container max-w-4xl">
           <div className="mx-auto max-w-2xl text-center mb-10">
             <p className="heading-eyebrow mb-2">
