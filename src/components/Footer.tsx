@@ -16,19 +16,11 @@ export default function Footer() {
       <div className="section-container py-16 lg:py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand Col */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-4">
             <Logo isDark={true} />
             <p className="text-sm leading-relaxed text-gray-300 max-w-sm">
               {t.footer.description}
             </p>
-
-            {/* Social Media Links */}
-            <div className="pt-1">
-              <p className="text-xs font-semibold text-primary-200 uppercase tracking-wider mb-2.5">
-                {t.footer.followUs}
-              </p>
-              <SocialLinks variant="footer" showLabels={true} />
-            </div>
           </div>
 
           {/* Core Services */}
@@ -168,28 +160,40 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
+          </div>
+        </div>
 
-            <div className="mt-6 pt-4 border-t border-white/10 space-y-2">
-              <div className="text-xs text-gray-400">{t.footer.officialContact}:</div>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="inline-flex items-center gap-1.5 text-xs text-primary-300 hover:text-white transition-colors"
-              >
-                <Mail className="h-3.5 w-3.5 flex-shrink-0" />
-                <span>{siteConfig.email}</span>
-              </a>
-              <div>
-                <a
-                  href={siteConfig.whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 transition-colors"
-                >
-                  <MessageCircle className="h-3.5 w-3.5 flex-shrink-0" />
-                  <span>{siteConfig.whatsapp}</span>
-                </a>
-              </div>
-            </div>
+        {/* Official Contact & Connect / Follow Us in One Unified Line */}
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          {/* Official Contact */}
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-xs font-semibold uppercase tracking-wider text-primary-200">
+              {t.footer.officialContact}:
+            </span>
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="inline-flex items-center gap-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 px-3.5 py-2 text-xs text-primary-200 hover:text-white transition-all shadow-sm"
+            >
+              <Mail className="h-3.5 w-3.5 text-primary-400 flex-shrink-0" />
+              <span>{siteConfig.email}</span>
+            </a>
+            <a
+              href={siteConfig.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 px-3.5 py-2 text-xs text-emerald-300 hover:text-white transition-all shadow-sm"
+            >
+              <MessageCircle className="h-3.5 w-3.5 text-emerald-400 flex-shrink-0" />
+              <span>WhatsApp: {siteConfig.whatsapp}</span>
+            </a>
+          </div>
+
+          {/* Connect & Follow Us */}
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-xs font-semibold uppercase tracking-wider text-primary-200">
+              {t.footer.followUs}:
+            </span>
+            <SocialLinks variant="footer" showLabels={true} />
           </div>
         </div>
       </div>
