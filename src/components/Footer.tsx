@@ -13,22 +13,24 @@ export default function Footer() {
   return (
     <footer className="border-t border-primary-900 bg-primary-950 text-white">
       {/* Upper Footer: Main columns */}
-      <div className="section-container py-16 lg:py-20">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
+      <div className="section-container py-6 sm:py-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand Col */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-2.5">
             <Logo isDark={true} />
-            <p className="text-sm leading-relaxed text-gray-300 max-w-sm">
-              {t.footer.description}
+            <p className="text-xs leading-relaxed text-gray-300 max-w-sm">
+              {locale === "de"
+                ? "Eingetragenes deutsches Einzelunternehmen (§ 14 GewO) mit Sitz in Weyhe, Deutschland. Bildungsberatung, Arbeitsvermittlung & internationale Initiativen."
+                : "Registered German sole proprietorship (§ 14 GewO) based in Weyhe, Germany. Educational consultancy, recruitment & global initiatives."}
             </p>
           </div>
 
           {/* Core Services */}
           <div>
-            <h4 className="font-display text-base font-semibold text-white tracking-wide mb-4">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-primary-200 mb-2">
               {t.footer.coreServices}
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-1 text-xs">
               <li>
                 <Link
                   href="/education"
@@ -82,10 +84,10 @@ export default function Footer() {
 
           {/* Organization & About */}
           <div>
-            <h4 className="font-display text-base font-semibold text-white tracking-wide mb-4">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-primary-200 mb-2">
               {t.footer.organization}
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-1 text-xs">
               <li>
                 <Link
                   href="/about"
@@ -123,10 +125,10 @@ export default function Footer() {
 
           {/* Legal & Compliance (German DDG / GDPR) */}
           <div>
-            <h4 className="font-display text-base font-semibold text-white tracking-wide mb-4">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-primary-200 mb-2">
               {t.footer.legalCompliance}
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-1 text-xs">
               <li>
                 <Link
                   href="/privacy-policy"
@@ -163,68 +165,55 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Official Contact & Connect / Follow Us in One Unified Line */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          {/* Official Contact */}
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xs font-semibold uppercase tracking-wider text-primary-200">
-              {t.footer.officialContact}:
-            </span>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="inline-flex items-center gap-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 px-3.5 py-2 text-xs text-primary-200 hover:text-white transition-all shadow-sm"
-            >
-              <Mail className="h-3.5 w-3.5 text-primary-400 flex-shrink-0" />
-              <span>{siteConfig.email}</span>
-            </a>
-            <a
-              href={siteConfig.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 px-3.5 py-2 text-xs text-emerald-300 hover:text-white transition-all shadow-sm"
-            >
-              <MessageCircle className="h-3.5 w-3.5 text-emerald-400 flex-shrink-0" />
-              <span>WhatsApp: {siteConfig.whatsapp}</span>
-            </a>
-          </div>
-
-          {/* Connect & Follow Us */}
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xs font-semibold uppercase tracking-wider text-primary-200">
-              {t.footer.followUs}:
-            </span>
-            <SocialLinks variant="footer" showLabels={true} />
-          </div>
+        {/* Unified Line: Email, WhatsApp, and Social Links all in the SAME line */}
+        <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center gap-2">
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="group inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-gray-300 hover:border-primary-400 hover:text-primary-200 hover:bg-primary-900/50 transition-all shadow-sm"
+          >
+            <Mail className="h-3.5 w-3.5 text-primary-400 flex-shrink-0" />
+            <span>{siteConfig.email}</span>
+          </a>
+          <a
+            href={siteConfig.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-gray-300 hover:border-emerald-400/60 hover:text-emerald-300 hover:bg-emerald-950/40 transition-all shadow-sm"
+          >
+            <MessageCircle className="h-3.5 w-3.5 text-emerald-400 flex-shrink-0" />
+            <span>WhatsApp: {siteConfig.whatsapp}</span>
+          </a>
+          <SocialLinks variant="footer" showLabels={true} className="contents" />
         </div>
 
         {/* Regulatory Compliance Disclaimer */}
-        <div className="mt-8 pt-6 border-t border-white/10 flex items-start gap-2.5 text-xs text-gray-400 leading-relaxed">
-          <ShieldCheck className="h-4 w-4 text-primary-400 flex-shrink-0 mt-0.5" />
-          <p>
-            <strong className="text-gray-300 font-semibold">{t.footer.importantInfo}:</strong>{" "}
+        <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center gap-2 text-[11px] text-gray-400">
+          <ShieldCheck className="h-3.5 w-3.5 text-primary-400 flex-shrink-0" />
+          <p className="line-clamp-1 sm:line-clamp-none">
+            <strong className="text-gray-300 font-semibold">{t.footer.importantInfo}</strong>{" "}
             {t.footer.disclaimer}
           </p>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 bg-primary-950/80 py-6 text-xs text-gray-400">
-        <div className="section-container flex flex-col items-center justify-between gap-4 sm:flex-row">
+      <div className="border-t border-white/10 bg-primary-950/90 py-2.5 text-[11px] text-gray-400">
+        <div className="section-container flex flex-col items-center justify-between gap-2 sm:flex-row">
           <p>{t.footer.copyright}</p>
-          <div className="flex flex-wrap items-center gap-4 text-xs">
-            <Link href="/privacy-policy" className="hover:text-white">
+          <div className="flex flex-wrap items-center gap-3 text-[11px]">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">
               {locale === "de" ? "Datenschutz" : "Privacy Policy"}
             </Link>
             <span>·</span>
-            <Link href="/impressum" className="hover:text-white">
+            <Link href="/impressum" className="hover:text-white transition-colors">
               Impressum
             </Link>
             <span>·</span>
-            <Link href="/terms" className="hover:text-white">
+            <Link href="/terms" className="hover:text-white transition-colors">
               {locale === "de" ? "AGB" : "Terms"}
             </Link>
             <span>·</span>
-            <Link href="/cookie-policy" className="hover:text-white">
+            <Link href="/cookie-policy" className="hover:text-white transition-colors">
               Cookies
             </Link>
           </div>

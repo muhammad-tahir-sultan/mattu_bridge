@@ -81,9 +81,9 @@ export default function HeroSlider() {
         </>
       ),
       subtitleDe:
-        "Ganzheitliche Bildungsberatung, anerkannte Universitätszulassungen und transparente Studienwege in Deutschland, Polen, Ungarn, Malta, Spanien und Portugal.",
+        "Ganzheitliche Bildungsberatung, anerkannte Universitätszulassungen und transparente Studienwege in Deutschland und ganz Europa.",
       subtitleEn:
-        "Comprehensive educational consultancy, recognized university admissions, and transparent study pathways across Germany, Poland, Hungary, Malta, Spain, and Portugal.",
+        "Comprehensive educational consultancy, recognized university admissions, and transparent study pathways across Germany and Europe.",
       primaryCtaTextDe: "Studienchancen entdecken",
       primaryCtaTextEn: "Explore Study Opportunities",
       primaryCtaLink: "/education",
@@ -334,8 +334,8 @@ export default function HeroSlider() {
                     </div>
                   </div>
 
-                  {/* 4 Trust Highlights Grid */}
-                  <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-white/15">
+                  {/* 3 Trust Highlights Grid */}
+                  <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-white/15">
                     <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md flex items-center gap-2.5">
                       <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
                       <div>
@@ -344,18 +344,6 @@ export default function HeroSlider() {
                         </p>
                         <p className="text-[10.5px] text-gray-300">
                           {isDe ? "Weyhe, Deutschland" : "Weyhe, Germany"}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md flex items-center gap-2.5">
-                      <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                      <div>
-                        <p className="text-xs font-bold text-white">
-                          {isDe ? "6 europäische Ziele" : "6 European Hubs"}
-                        </p>
-                        <p className="text-[10.5px] text-gray-300">
-                          {isDe ? "DE, PL, MT, ES, PT, HU" : "DE, PL, MT, ES, PT, HU"}
                         </p>
                       </div>
                     </div>

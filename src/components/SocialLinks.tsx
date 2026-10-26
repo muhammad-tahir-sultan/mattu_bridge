@@ -179,7 +179,7 @@ export default function SocialLinks({
 
   // Default "footer" variant
   return (
-    <div className={`flex flex-wrap items-center gap-2.5 ${className}`}>
+    <div className={className.includes("contents") ? className : `flex flex-wrap items-center gap-2 ${className}`}>
       {socials.map((item) => {
         let hoverClasses =
           "hover:border-primary-400 hover:text-primary-200 hover:bg-primary-900/50";
@@ -202,11 +202,11 @@ export default function SocialLinks({
             rel="noopener noreferrer"
             title={`${item.name}: ${item.handle}`}
             aria-label={`Mattu Bridge on ${item.name}`}
-            className={`group inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-medium text-gray-300 transition-all ${hoverClasses}`}
+            className={`group inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-gray-300 transition-all ${hoverClasses}`}
           >
             <SocialIcon
               platform={item.id}
-              className="h-4 w-4 flex-shrink-0 transition-transform group-hover:scale-110"
+              className="h-3.5 w-3.5 flex-shrink-0 transition-transform group-hover:scale-110"
             />
             {showLabels ? (
               <span>{item.name}</span>

@@ -343,7 +343,7 @@ export default function AdminPage() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-white">Central Operations Hub</p>
-                    <p className="text-[11px] text-gray-300">Frankfurt am Main, Germany</p>
+                    <p className="text-[11px] text-gray-300">Weyhe, Germany</p>
                   </div>
                 </div>
 
@@ -352,8 +352,8 @@ export default function AdminPage() {
                     <Globe className="h-4 w-4" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-white">6 European Destinations</p>
-                    <p className="text-[11px] text-gray-300">DE, PL, MT, ES, PT, HU Connected</p>
+                    <p className="text-xs font-bold text-white">Pan-European Mobility</p>
+                    <p className="text-[11px] text-gray-300">Schengen & European Union</p>
                   </div>
                 </div>
 
@@ -505,7 +505,7 @@ export default function AdminPage() {
                 <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
                 <span>German DDG & BDSG Compliant</span>
               </span>
-              <span>Mattu Bridge · Frankfurt am Main, Germany</span>
+              <span>Mattu Bridge · Weyhe, Germany</span>
             </div>
           </div>
         </div>

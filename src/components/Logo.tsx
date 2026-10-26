@@ -96,7 +96,9 @@ export default function Logo({
       <div className="flex flex-col leading-tight flex-shrink-0">
         <span
           className={`font-display text-base sm:text-lg md:text-xl font-bold tracking-tight whitespace-nowrap transition-colors ${
-            isDark ? "text-white" : "text-gray-950 group-hover:text-primary-700"
+            isDark
+              ? "text-primary-300 group-hover:text-primary-100"
+              : "text-primary-800 group-hover:text-primary-600"
           }`}
         >
           Mattu Bridge
