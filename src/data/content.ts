@@ -6,12 +6,14 @@ export const siteConfig = {
   email: "Info@mattubridge.de",
   whatsapp: "+49 15 905 664 369",
   whatsappLink: "https://wa.me/4915905664369",
-  location: "Germany",
+  location: "Weyhe, Germany",
+  legalForm: "Einzelunternehmen (Sole Proprietorship)",
+  registration: "Registered under § 14 GewO (German Trade Regulation Act)",
   servingRegion: "Germany & Across Europe",
   domain: "https://mattubridge.de",
   tagline: "Connecting Education, Careers & International Opportunities",
   description:
-    "Mattu Bridge is a registered consultancy business in Germany, bringing together educational consultancy, employment placement and recruitment, and international educational and social initiatives through one professional platform. We connect people with opportunities and institutions through trust, collaboration, and equal opportunities.",
+    "Mattu Bridge is a registered sole proprietorship (Einzelunternehmen) based in Weyhe, Germany, registered under § 14 of the German Trade Regulation Act (Gewerbeordnung – GewO). It brings together educational consultancy, employment placement and recruitment, and international educational and social initiatives under one professional platform. We connect people with opportunities and institutions through trust, collaboration, and equal opportunities.",
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61594515052924",
     tiktok: "https://www.tiktok.com/@mattu.bridge",

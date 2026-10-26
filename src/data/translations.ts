@@ -292,7 +292,7 @@ export const translations: Record<Locale, TranslationSchema> = {
     },
     footer: {
       description:
-        "Mattu Bridge is a registered consultancy business in Germany, bringing together educational consultancy, employment placement and recruitment, and international educational and social initiatives through one professional platform. We connect people with opportunities and institutions through trust, collaboration, and equal opportunities.",
+        "Mattu Bridge is a registered sole proprietorship (Einzelunternehmen) based in Weyhe, Germany, registered under § 14 of the German Trade Regulation Act (Gewerbeordnung – GewO). It brings together educational consultancy, employment placement and recruitment, and international educational and social initiatives under one professional platform. We connect people with opportunities and institutions through trust, collaboration, and equal opportunities.",
       gdprNotice:
         "Operating in Germany with a strict commitment to transparent communication, GDPR compliance, and verifiable services.",
       coreServices: "Core Services",
@@ -353,7 +353,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       badge: "Germany-based · Serving Europe & Beyond",
       title: "Connecting Education, Careers & International Opportunities",
       subtitle:
-        "Mattu Bridge is a registered consultancy business in Germany, bringing together educational consultancy, employment placement and recruitment, and international educational and social initiatives through one professional platform. We connect people with opportunities and institutions through trust, collaboration, and equal opportunities.",
+        "Mattu Bridge is a registered sole proprietorship (Einzelunternehmen) based in Weyhe, Germany, registered under § 14 of the German Trade Regulation Act (Gewerbeordnung – GewO). It brings together educational consultancy, employment placement and recruitment, and international educational and social initiatives under one professional platform. We connect people with opportunities and institutions through trust, collaboration, and equal opportunities.",
       ctaEducation: "Explore Education Opportunities",
       ctaJobs: "Jobs & Recruitment",
       ctaEvents: "International Events",
@@ -600,7 +600,7 @@ export const translations: Record<Locale, TranslationSchema> = {
     },
     footer: {
       description:
-        "Mattu Bridge ist ein in Deutschland registriertes Beratungsunternehmen, das Bildungsberatung, Personal- und Arbeitsvermittlung sowie internationale Bildungs- und Sozialinitiativen auf einer professionellen Plattform vereint. Wir verbinden Menschen mit Chancen und Institutionen auf der Grundlage von Vertrauen, Zusammenarbeit und Chancengleichheit.",
+        "Mattu Bridge ist ein eingetragenes Einzelunternehmen mit Sitz in Weyhe, Deutschland, registriert gemäß § 14 der Gewerbeordnung (GewO). Es vereint Bildungsberatung, Personal- und Arbeitsvermittlung sowie internationale Bildungs- und Sozialinitiativen auf einer professionellen Plattform. Wir verbinden Menschen mit Chancen und Institutionen auf der Grundlage von Vertrauen, Zusammenarbeit und Chancengleichheit.",
       gdprNotice:
         "Tätig in Deutschland mit striktem Bekenntnis zu transparenter Kommunikation, DSGVO-Konformität und überprüfbaren Dienstleistungen.",
       coreServices: "Zentrale Leistungen",
@@ -661,7 +661,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       badge: "Sitz in Deutschland · Für Europa & weltweit",
       title: "Bildung, Karriere & internationale Chancen verbinden",
       subtitle:
-        "Mattu Bridge ist ein in Deutschland registriertes Beratungsunternehmen, das Bildungsberatung, Personal- und Arbeitsvermittlung sowie internationale Bildungs- und Sozialinitiativen auf einer professionellen Plattform vereint. Wir verbinden Menschen mit Chancen und Institutionen auf der Grundlage von Vertrauen, Zusammenarbeit und Chancengleichheit.",
+        "Mattu Bridge ist ein eingetragenes Einzelunternehmen mit Sitz in Weyhe, Deutschland, registriert gemäß § 14 der Gewerbeordnung (GewO). Es vereint Bildungsberatung, Personal- und Arbeitsvermittlung sowie internationale Bildungs- und Sozialinitiativen auf einer professionellen Plattform. Wir verbinden Menschen mit Chancen und Institutionen auf der Grundlage von Vertrauen, Zusammenarbeit und Chancengleichheit.",
       ctaEducation: "Bildungschancen entdecken",
       ctaJobs: "Jobs & Rekrutierung",
       ctaEvents: "Internationale Events",

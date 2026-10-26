@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AlertCircle, Scale, Shield } from "lucide-react";
+import { AlertCircle, Scale, Shield, ShieldCheck } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { siteConfig } from "@/data/content";
 import { images } from "@/data/images";
@@ -23,18 +23,14 @@ export default function ImpressumPage() {
       <section className="section-padding bg-white">
         <div className="section-container max-w-4xl">
           {/* Regulatory Notice Banner */}
-          <div className="mb-10 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-xs text-amber-900 leading-relaxed flex items-start gap-3">
-            <AlertCircle className="h-5 w-5 text-amber-700 flex-shrink-0 mt-0.5" />
+          <div className="mb-10 rounded-2xl border border-emerald-200 bg-emerald-50/70 p-5 text-xs text-emerald-950 leading-relaxed flex items-start gap-3">
+            <ShieldCheck className="h-5 w-5 text-emerald-700 flex-shrink-0 mt-0.5" />
             <div>
               <p className="font-semibold mb-1">
-                Gesetzlicher Hinweis zum Impressum:
+                Gewerberechtlicher Status gemäß § 14 GewO:
               </p>
               <p>
-                Dieses Impressum enthält die gesetzlich geforderten Angaben gemäß
-                deutschem Recht. Gemäß den vertraglichen Vorgaben des
-                Geschäftsinhabers wird die ladungsfähige Geschäftsadresse
-                nach Bestätigung der endgültigen Gewerbeanmeldung hier
-                aktualisiert.
+                Mattu Bridge ist ein ordnungsgemäß angemeldetes Einzelunternehmen mit Sitz in Weyhe, Deutschland, registriert gemäß § 14 der deutschen Gewerbeordnung (GewO).
               </p>
             </div>
           </div>
@@ -47,10 +43,9 @@ export default function ImpressumPage() {
               </h2>
               <div className="space-y-1.5">
                 <p className="font-semibold text-gray-950">{siteConfig.name}</p>
-                <p>Unternehmenssitz: Deutschland (Germany)</p>
-                <p className="text-gray-500 italic">
-                  [Geschäftsanschrift: Wird nach Bestätigung der Registrierung durch den Inhaber vervollständigt]
-                </p>
+                <p>Rechtsform: Einzelunternehmen (Sole Proprietorship)</p>
+                <p>Gewerbeanmeldung: Registriert gemäß § 14 GewO (Gewerbeordnung)</p>
+                <p>Unternehmenssitz: Weyhe, Deutschland (Germany)</p>
               </div>
             </div>
 

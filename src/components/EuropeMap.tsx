@@ -127,8 +127,8 @@ export default function EuropeMap() {
               </span>
               <span className="font-semibold text-slate-700">
                 {isDe
-                  ? "Zentraler Hauptsitz: Frankfurt am Main, Deutschland"
-                  : "Central Operations: Frankfurt am Main, Germany"}
+                  ? "Unternehmenssitz: Weyhe, Deutschland"
+                  : "Registered Office: Weyhe, Germany"}
               </span>
             </div>
           </div>
@@ -139,12 +139,12 @@ export default function EuropeMap() {
           <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:border-primary-200 transition-colors">
             <Building2 className="h-5 w-5 text-primary-700 mb-2" />
             <h4 className="text-xs font-bold text-gray-900">
-              {isDe ? "Deutscher Hauptsitz" : "German Headquarters"}
+              {isDe ? "Sitz in Deutschland" : "German Registration"}
             </h4>
             <p className="text-[11px] text-gray-600 mt-0.5">
               {isDe
-                ? "Frankfurt am Main – europäisches Finanz- & Rechtszentrum."
-                : "Frankfurt am Main – Europe's financial & legal hub."}
+                ? "Weyhe, Deutschland – Registriert nach § 14 GewO."
+                : "Weyhe, Germany – Registered under § 14 GewO."}
             </p>
           </div>
 
@@ -234,7 +234,7 @@ export default function EuropeMap() {
                   ? "Schengen-Raum & Europäische Union: Bildung, Mobilität & Arbeitsmarktzugang"
                   : "Schengen Area & European Union: Education, Mobility & Legal Employment Pathways"}
               </span>
-              <span className="font-semibold text-primary-700">Mattu Bridge · Frankfurt am Main</span>
+              <span className="font-semibold text-primary-700">Mattu Bridge · Weyhe, Deutschland</span>
             </div>
           </div>
         </div>

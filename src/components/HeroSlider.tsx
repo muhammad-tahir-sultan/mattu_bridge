@@ -343,7 +343,7 @@ export default function HeroSlider() {
                           {isDe ? "Sitz in Deutschland" : "Based in Germany"}
                         </p>
                         <p className="text-[10.5px] text-gray-300">
-                          {isDe ? "Frankfurt am Main" : "Frankfurt am Main"}
+                          {isDe ? "Weyhe, Deutschland" : "Weyhe, Germany"}
                         </p>
                       </div>
                     </div>
