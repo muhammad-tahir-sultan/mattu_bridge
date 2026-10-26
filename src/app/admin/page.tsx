@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   LayoutDashboard,
   GraduationCap,
@@ -25,9 +27,17 @@ import {
   AlertCircle,
   Loader2,
   KeyRound,
+  ArrowLeft,
+  CheckCircle2,
+  Activity,
+  Globe,
+  Sparkles,
+  Server,
+  ShieldAlert,
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import Logo from "@/components/Logo";
+import { images } from "@/data/images";
 import { initialJobListings, JobListing } from "@/data/jobsData";
 
 export default function AdminPage() {
@@ -272,108 +282,237 @@ export default function AdminPage() {
   // 2. Unauthenticated Login Screen
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-primary-950 via-slate-900 to-primary-950 flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-hidden text-white">
-        {/* Background glow orbs */}
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary-600/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="min-h-screen bg-[#070f1e] flex flex-col items-center justify-center p-4 sm:p-6 lg:p-10 relative overflow-hidden text-white">
+        {/* Ambient Glow Orbs */}
+        <div className="absolute top-1/4 -left-40 w-[30rem] h-[30rem] bg-primary-600/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/4 -right-40 w-[30rem] h-[30rem] bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#1e3a5f_1px,transparent_1px)] [background-size:24px_24px] opacity-20 pointer-events-none" />
 
-        <div className="w-full max-w-md relative z-10">
-          {/* Logo & Header */}
-          <div className="text-center mb-6">
-            <div className="inline-block mb-3">
-              <Logo isDark={true} variant="full" />
+        {/* Top Back Navigation Link */}
+        <div className="w-full max-w-5xl mb-4 flex items-center justify-between z-20">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3.5 py-2 text-xs font-semibold text-gray-300 hover:text-white hover:bg-white/10 backdrop-blur-md transition-all shadow-sm"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            <span>Back to Mattu Bridge Website</span>
+          </Link>
+
+          <div className="inline-flex items-center gap-2 text-[11px] text-gray-400">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Frankfurt Operations · Operational</span>
+          </div>
+        </div>
+
+        {/* Master Enterprise Dual-Panel Card */}
+        <div className="w-full max-w-5xl relative z-10 rounded-3xl border border-white/15 bg-slate-900/90 shadow-2xl backdrop-blur-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+          {/* Left Panel: Corporate Brand Showcase & Platform Status (5 Cols) */}
+          <div className="lg:col-span-5 relative bg-gradient-to-br from-primary-950 via-[#0a182c] to-[#06101e] p-8 sm:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10 overflow-hidden">
+            {/* Background Image of Frankfurt Cityscape */}
+            <div className="absolute inset-0 pointer-events-none">
+              <Image
+                src={images.frankfurtRiver}
+                alt="Frankfurt am Main"
+                fill
+                sizes="(max-width: 1024px) 100vw, 480px"
+                className="object-cover opacity-15"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-primary-950/85 via-[#0a182c]/90 to-[#06101e]" />
             </div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-emerald-300 mb-2">
-              <Lock className="h-3 w-3" />
-              <span>Geschützter Bereich · Restricted Access</span>
+
+            <div className="relative z-10">
+              {/* Logo with White Badge */}
+              <div className="inline-block p-2 rounded-2xl bg-white/90 shadow-md mb-6">
+                <Logo isDark={false} variant="full" />
+              </div>
+
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300 backdrop-blur-md mb-3">
+                <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+                <span>Enterprise Governance Portal</span>
+              </div>
+
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
+                Control & Compliance Center
+              </h2>
+              <p className="mt-2.5 text-xs sm:text-sm text-gray-300 leading-relaxed">
+                Central administrative console for evaluating student inquiries, verifying employer job vacancies, coordinating international events, and maintaining German GDPR audit compliance.
+              </p>
+
+              {/* Status & Compliance Highlights */}
+              <div className="mt-6 space-y-2.5">
+                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md flex items-center gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-300 flex-shrink-0">
+                    <Activity className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-white">Central Operations Hub</p>
+                    <p className="text-[11px] text-gray-300">Frankfurt am Main, Germany</p>
+                  </div>
+                </div>
+
+                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md flex items-center gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-500/20 text-primary-300 flex-shrink-0">
+                    <Globe className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-white">6 European Destinations</p>
+                    <p className="text-[11px] text-gray-300">DE, PL, MT, ES, PT, HU Connected</p>
+                  </div>
+                </div>
+
+                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md flex items-center gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300 flex-shrink-0">
+                    <ShieldCheck className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-white">German DDG & GDPR Monitored</p>
+                    <p className="text-[11px] text-gray-300">Strict Role-Based Audit Logging</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h1 className="font-display text-2xl sm:text-3xl font-bold text-white">
-              Admin Portal
-            </h1>
-            <p className="text-xs sm:text-sm text-gray-400 mt-1">
-              Sign in with your verified administrative credentials
-            </p>
+
+            {/* Bottom Director Quote */}
+            <div className="relative z-10 pt-6 mt-6 border-t border-white/10">
+              <p className="text-xs italic text-gray-300">
+                &ldquo;Connecting people with meaningful educational and professional pathways through transparent German governance.&rdquo;
+              </p>
+              <p className="text-[11px] font-bold text-white mt-1.5">
+                — I.A Mattu, Director
+              </p>
+            </div>
           </div>
 
-          {/* Login Card */}
-          <div className="rounded-3xl border border-white/15 bg-white/10 p-6 sm:p-8 backdrop-blur-xl shadow-2xl">
-            {loginError && (
-              <div className="mb-5 flex items-start gap-2.5 rounded-2xl border border-rose-500/30 bg-rose-500/10 p-3.5 text-xs text-rose-200">
-                <AlertCircle className="h-4 w-4 text-rose-400 flex-shrink-0 mt-0.5" />
-                <span>{loginError}</span>
-              </div>
-            )}
-
-            <form onSubmit={handleLogin} className="space-y-4">
-              <div>
-                <label className="block text-xs font-semibold text-gray-300 mb-1.5 uppercase tracking-wider">
-                  Username or Email
-                </label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
-                    <User className="h-4 w-4" />
-                  </div>
-                  <input
-                    type="text"
-                    required
-                    value={loginData.username}
-                    onChange={(e) => setLoginData({ ...loginData, username: e.target.value })}
-                    placeholder="admin or admin@mattubridge.de"
-                    className="w-full rounded-xl border border-white/15 bg-black/30 pl-10 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:border-emerald-400 focus:outline-none focus:ring-1 focus:ring-emerald-400"
-                  />
+          {/* Right Panel: Modern Clean Login Console (7 Cols) */}
+          <div className="lg:col-span-7 bg-slate-900/95 p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
+            <div>
+              {/* Header Badge & Title */}
+              <div className="flex items-center justify-between mb-2">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-primary-300">
+                  <Lock className="h-3 w-3" />
+                  <span>Restricted Access · Authorized Personnel Only</span>
                 </div>
               </div>
 
-              <div>
-                <label className="block text-xs font-semibold text-gray-300 mb-1.5 uppercase tracking-wider">
-                  Password
-                </label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
-                    <Lock className="h-4 w-4" />
+              <h1 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight mt-2">
+                Administrator Sign-In
+              </h1>
+              <p className="text-xs sm:text-sm text-gray-400 mt-1">
+                Enter your verified credentials to access the Mattu Bridge control center.
+              </p>
+
+              {/* Error Banner */}
+              {loginError && (
+                <div className="mt-5 flex items-start gap-3 rounded-2xl border border-rose-500/30 bg-rose-500/10 p-3.5 text-xs text-rose-200 shadow-sm animate-shake">
+                  <AlertCircle className="h-4 w-4 text-rose-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-bold text-rose-300">Authentication Failed</p>
+                    <p className="mt-0.5">{loginError}</p>
                   </div>
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    required
-                    value={loginData.password}
-                    onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
-                    placeholder="Enter admin password"
-                    className="w-full rounded-xl border border-white/15 bg-black/30 pl-10 pr-10 py-2.5 text-sm text-white placeholder-gray-500 focus:border-emerald-400 focus:outline-none focus:ring-1 focus:ring-emerald-400"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-gray-400 hover:text-white"
-                  >
-                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                  </button>
                 </div>
-              </div>
+              )}
 
-              <button
-                type="submit"
-                disabled={loginSubmitting}
-                className="btn-accent w-full justify-center !py-3 text-sm font-bold shadow-lg shadow-emerald-500/20 disabled:opacity-50 mt-2"
-              >
-                {loginSubmitting ? (
-                  <>
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    <span>Verifying...</span>
-                  </>
-                ) : (
-                  <>
-                    <KeyRound className="h-4 w-4" />
-                    <span>Sign In to Admin Portal</span>
-                  </>
-                )}
-              </button>
-            </form>
+              {/* Login Form */}
+              <form onSubmit={handleLogin} className="mt-6 space-y-5">
+                <div>
+                  <label className="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">
+                    Username or Official Email
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+                      <User className="h-4 w-4" />
+                    </div>
+                    <input
+                      type="text"
+                      required
+                      value={loginData.username}
+                      onChange={(e) =>
+                        setLoginData({ ...loginData, username: e.target.value })
+                      }
+                      placeholder="admin or admin@mattubridge.de"
+                      className="w-full rounded-xl border border-white/15 bg-slate-950/70 pl-10 pr-4 py-3 text-sm text-white placeholder-gray-500 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500/25 transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider">
+                      Security Password
+                    </label>
+                    <span className="text-[11px] text-primary-300">256-Bit Encrypted</span>
+                  </div>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+                      <Lock className="h-4 w-4" />
+                    </div>
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      required
+                      value={loginData.password}
+                      onChange={(e) =>
+                        setLoginData({ ...loginData, password: e.target.value })
+                      }
+                      placeholder="Enter administrator password"
+                      className="w-full rounded-xl border border-white/15 bg-slate-950/70 pl-10 pr-11 py-3 text-sm text-white placeholder-gray-500 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500/25 transition-all"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-gray-400 hover:text-white transition-colors"
+                      title={showPassword ? "Hide password" : "Show password"}
+                    >
+                      {showPassword ? (
+                        <EyeOff className="h-4 w-4" />
+                      ) : (
+                        <Eye className="h-4 w-4" />
+                      )}
+                    </button>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between text-xs text-gray-400 pt-1">
+                  <label className="flex items-center gap-2 cursor-pointer select-none">
+                    <input
+                      type="checkbox"
+                      defaultChecked
+                      className="rounded border-white/20 bg-slate-950 text-primary-600 focus:ring-primary-500"
+                    />
+                    <span>Remember this device on trusted network</span>
+                  </label>
+                  <span className="text-[11px] text-gray-400">TLS 1.3 Active</span>
+                </div>
+
+                {/* Primary Action Button */}
+                <button
+                  type="submit"
+                  disabled={loginSubmitting}
+                  className="w-full rounded-xl bg-gradient-to-r from-primary-700 via-primary-600 to-primary-800 hover:from-primary-600 hover:to-primary-700 text-white font-bold py-3.5 text-sm shadow-xl shadow-primary-950/60 disabled:opacity-50 transition-all flex items-center justify-center gap-2 border border-primary-500/30"
+                >
+                  {loginSubmitting ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin text-white" />
+                      <span>Verifying Administrative Session...</span>
+                    </>
+                  ) : (
+                    <>
+                      <KeyRound className="h-4 w-4" />
+                      <span>Authenticate & Enter Control Center</span>
+                    </>
+                  )}
+                </button>
+              </form>
+            </div>
+
+            {/* Bottom Security Footer */}
+            <div className="pt-6 mt-6 border-t border-white/10 flex flex-wrap items-center justify-between text-[11px] text-gray-400 gap-2">
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+                <span>German DDG & BDSG Compliant</span>
+              </span>
+              <span>Mattu Bridge · Frankfurt am Main, Germany</span>
+            </div>
           </div>
-
-          {/* Security Note */}
-          <p className="mt-4 text-center text-[11px] text-gray-500">
-            256-bit Encrypted Session · Strict Access Logging · German DDG / GDPR Compliant
-          </p>
         </div>
       </div>
     );
