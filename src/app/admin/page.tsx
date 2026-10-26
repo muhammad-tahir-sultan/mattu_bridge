@@ -282,7 +282,7 @@ export default function AdminPage() {
   // 2. Unauthenticated Login Screen
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-[#070f1e] flex flex-col items-center justify-center p-4 sm:p-6 lg:p-10 relative overflow-hidden text-white">
+      <div className="min-h-screen bg-primary-950 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-10 relative overflow-hidden text-white">
         {/* Ambient Glow Orbs */}
         <div className="absolute top-1/4 -left-40 w-[30rem] h-[30rem] bg-primary-600/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-1/4 -right-40 w-[30rem] h-[30rem] bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
@@ -297,11 +297,6 @@ export default function AdminPage() {
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>Back to Mattu Bridge Website</span>
           </Link>
-
-          <div className="inline-flex items-center gap-2 text-[11px] text-gray-400">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Frankfurt Operations · Operational</span>
-          </div>
         </div>
 
         {/* Master Enterprise Dual-Panel Card */}
@@ -321,15 +316,7 @@ export default function AdminPage() {
             </div>
 
             <div className="relative z-10">
-              {/* Logo with White Badge */}
-              <div className="inline-block p-2 rounded-2xl bg-white/90 shadow-md mb-6">
-                <Logo isDark={false} variant="full" />
-              </div>
-
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300 backdrop-blur-md mb-3">
-                <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-                <span>Enterprise Governance Portal</span>
-              </div>
+              {/* Logo with White Badge place in center - place logo image in center vertically and horizontally*/}
 
               <h2 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
                 Control & Compliance Center
@@ -440,7 +427,6 @@ export default function AdminPage() {
                     <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider">
                       Security Password
                     </label>
-                    <span className="text-[11px] text-primary-300">256-Bit Encrypted</span>
                   </div>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
@@ -480,7 +466,6 @@ export default function AdminPage() {
                     />
                     <span>Remember this device on trusted network</span>
                   </label>
-                  <span className="text-[11px] text-gray-400">TLS 1.3 Active</span>
                 </div>
 
                 {/* Primary Action Button */}
@@ -590,11 +575,10 @@ export default function AdminPage() {
                   setActiveTab(tab.id as any);
                   setSelectedItem(null);
                 }}
-                className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold transition-all ${
-                  active
-                    ? "bg-primary-700 text-white shadow-md"
-                    : "text-gray-700 hover:bg-gray-100 hover:text-gray-950"
-                }`}
+                className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold transition-all ${active
+                  ? "bg-primary-700 text-white shadow-md"
+                  : "text-gray-700 hover:bg-gray-100 hover:text-gray-950"
+                  }`}
               >
                 <Icon className="h-4 w-4" />
                 <span>{tab.label}</span>

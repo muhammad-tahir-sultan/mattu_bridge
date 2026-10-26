@@ -42,62 +42,64 @@ export default function HomePage() {
           <div className="absolute -left-24 bottom-10 h-96 w-96 rounded-full bg-accent-500/15 blur-3xl" />
         </div>
 
-        <div className="relative z-10 w-full max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 xl:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <div className="relative z-10 w-full max-w-[98rem] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 lg:py-20 xl:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-stretch">
             {/* Left Column: Text & Actions */}
-            <div className="lg:col-span-7 xl:col-span-7">
-              {/* Pill Badge */}
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-primary-200 backdrop-blur-md">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>{t.home.badge}</span>
-              </div>
+            <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-between">
+              <div>
+                {/* Pill Badge */}
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-primary-200 backdrop-blur-md self-start">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>{t.home.badge}</span>
+                </div>
 
-              {/* Main Heading */}
-              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.65rem] font-bold leading-[1.12] tracking-tight text-white">
-                {locale === "de" ? (
-                  <>
-                    Brücken bauen zu{" "}
-                    <span className="text-emerald-300">Bildung &</span>{" "}
-                    Chancen in Europa
-                  </>
-                ) : (
-                  <>
-                    Building Bridges to{" "}
-                    <span className="text-emerald-300">Education &</span>{" "}
-                    Opportunities in Europe
-                  </>
-                )}
-              </h1>
+                {/* Main Heading */}
+                <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.65rem] font-bold leading-[1.12] tracking-tight text-white">
+                  {locale === "de" ? (
+                    <>
+                      Brücken bauen zu{" "}
+                      <span className="text-emerald-300">Bildung &</span>{" "}
+                      Chancen in Europa
+                    </>
+                  ) : (
+                    <>
+                      Building Bridges to{" "}
+                      <span className="text-emerald-300">Education &</span>{" "}
+                      Opportunities in Europe
+                    </>
+                  )}
+                </h1>
 
-              {/* Supporting Text */}
-              <p className="mt-5 text-base sm:text-lg md:text-xl leading-relaxed text-gray-200 max-w-3xl font-normal">
-                {t.home.subtitle}
-              </p>
+                {/* Supporting Text */}
+                <p className="mt-5 text-base sm:text-lg md:text-xl leading-relaxed text-gray-200 max-w-4xl font-normal">
+                  {t.home.subtitle}
+                </p>
 
-              {/* Primary Action Buttons */}
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Link href="/education" className="btn-primary !py-3 !px-6 text-sm sm:text-base font-bold shadow-xl shadow-primary-900/40">
-                  <GraduationCap className="h-4 w-4 sm:h-5 sm:w-5" />
-                  <span>{locale === "de" ? "Studienchancen entdecken" : "Explore Study Opportunities"}</span>
-                </Link>
-                <Link
-                  href="/jobs"
-                  className="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10 !py-3 !px-6 text-sm sm:text-base font-semibold"
-                >
-                  <Briefcase className="h-4 w-4 sm:h-5 sm:w-5" />
-                  <span>{locale === "de" ? "Jobchancen finden" : "Find Job Opportunities"}</span>
-                </Link>
-                <Link
-                  href="/events"
-                  className="inline-flex items-center gap-2 rounded-lg border border-amber-400/40 bg-amber-500/10 px-4 sm:px-5 py-3 text-sm sm:text-base font-semibold text-amber-200 hover:bg-amber-500/20 transition-all"
-                >
-                  <Globe className="h-4 w-4" />
-                  <span>{t.home.ctaEvents}</span>
-                </Link>
+                {/* Primary Action Buttons */}
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <Link href="/education" className="btn-primary !py-3 !px-6 text-sm sm:text-base font-bold shadow-xl shadow-primary-900/40">
+                    <GraduationCap className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <span>{locale === "de" ? "Studienchancen entdecken" : "Explore Study Opportunities"}</span>
+                  </Link>
+                  <Link
+                    href="/jobs"
+                    className="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10 !py-3 !px-6 text-sm sm:text-base font-semibold"
+                  >
+                    <Briefcase className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <span>{locale === "de" ? "Jobchancen finden" : "Find Job Opportunities"}</span>
+                  </Link>
+                  <Link
+                    href="/events"
+                    className="inline-flex items-center gap-2 rounded-lg border border-amber-400/40 bg-amber-500/10 px-4 sm:px-5 py-3 text-sm sm:text-base font-semibold text-amber-200 hover:bg-amber-500/20 transition-all"
+                  >
+                    <Globe className="h-4 w-4" />
+                    <span>{t.home.ctaEvents}</span>
+                  </Link>
+                </div>
               </div>
 
               {/* Expansive Transparency & Trust Highlights Grid */}
-              <div className="mt-9 grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-white/15">
+              <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-white/15">
                 <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md flex items-center gap-2.5">
                   <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
                   <div>
@@ -148,42 +150,40 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Hero Photo Composition */}
-            <div className="lg:col-span-5 xl:col-span-5 relative flex justify-center lg:justify-end mt-6 lg:mt-0">
-              <div className="relative w-full max-w-[540px] xl:max-w-[580px]">
-                {/* Main Teacher Image Card with Blackboard formulas */}
-                <div className="relative aspect-[4/3.4] sm:aspect-[4/3.2] lg:aspect-[4/3.4] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-gray-900 group">
-                  <Image
-                    src={images.heroTeacher}
-                    alt="Education & Opportunities in Europe - Mattu Bridge"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 560px"
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent pointer-events-none" />
+            {/* Right Column: Hero Photo Composition - Tall & Matching Left Content Height */}
+            <div className="lg:col-span-5 xl:col-span-5 relative flex justify-center lg:justify-end mt-8 lg:mt-0 h-full">
+              <div className="relative w-full h-full min-h-[500px] sm:min-h-[540px] lg:min-h-[580px] xl:min-h-[620px] rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-gray-900 group">
+                <Image
+                  src={images.heroTeacher}
+                  alt="Education & Opportunities in Europe - Mattu Bridge"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 620px"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/85 via-transparent to-transparent pointer-events-none" />
 
-                  {/* Corner Badge */}
-                  <div className="absolute top-4 right-4 rounded-full bg-primary-950/85 px-3.5 py-1.5 text-xs font-semibold text-emerald-300 backdrop-blur-md border border-white/15 shadow-lg">
-                    🎓 {locale === "de" ? "Bildung in Europa" : "Study in Europe"}
-                  </div>
+                {/* Corner Badge */}
+                <div className="absolute top-4 right-4 rounded-full bg-primary-950/85 px-3.5 py-1.5 text-xs font-semibold text-emerald-300 backdrop-blur-md border border-white/15 shadow-lg">
+                  🎓 {locale === "de" ? "Bildung in Europa" : "Study in Europe"}
+                </div>
 
-                  {/* Bottom Pathway Banner */}
-                  <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-primary-950/80 p-3.5 backdrop-blur-md border border-white/15 shadow-xl flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <p className="text-xs font-semibold text-white">
-                        {locale === "de"
-                          ? "Zugelassene Bildungs- & Karriereprogramme in Europa"
-                          : "Recognised Educational & Career Pathways in Europe"}
-                      </p>
-                    </div>
+                {/* Bottom Pathway Banner */}
+                <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-primary-950/85 p-4 backdrop-blur-md border border-white/15 shadow-xl flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <p className="text-xs font-semibold text-white">
+                      {locale === "de"
+                        ? "Zugelassene Bildungs- & Karriereprogramme in Europa"
+                        : "Recognised Educational & Career Pathways in Europe"}
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
       </section>
 
       {/* 2. The Three Principal Business Categories */}
