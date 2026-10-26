@@ -19,9 +19,7 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-2.5">
             <Logo isDark={true} />
             <p className="text-xs leading-relaxed text-gray-300 max-w-sm">
-              {locale === "de"
-                ? "Eingetragenes deutsches Einzelunternehmen (§ 14 GewO) mit Sitz in Weyhe, Deutschland. Bildungsberatung, Arbeitsvermittlung & internationale Initiativen."
-                : "Registered German sole proprietorship (§ 14 GewO) based in Weyhe, Germany. Educational consultancy, recruitment & global initiatives."}
+              {t.footer.description}
             </p>
           </div>
 
