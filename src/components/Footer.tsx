@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-2.5">
             <Logo isDark={true} />
-            <p className="text-xs leading-relaxed text-gray-300 max-w-sm">
+            <p className="text-xs leading-relaxed text-gray-300 max-w-lg">
               {t.footer.description}
             </p>
           </div>
