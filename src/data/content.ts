@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: "Mattu Bridge",
   director: "IA Mattu",
   directorTitle: "Director, Mattu Bridge",
-  email: "Info@mattubridge.de",
+  email: "info@mattubridge.de",
   whatsapp: "+49 15 905 664 369",
   whatsappLink: "https://wa.me/4915905664369",
   location: "Weyhe, Germany",

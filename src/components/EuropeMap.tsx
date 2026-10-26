@@ -6,7 +6,6 @@ import Link from "next/link";
 import {
   Compass,
   Globe,
-  Building2,
   GraduationCap,
   ShieldCheck,
   Maximize2,
@@ -134,20 +133,8 @@ export default function EuropeMap() {
           </div>
         </div>
 
-        {/* 4 Bottom Assurance Cards */}
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-          <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:border-primary-200 transition-colors">
-            <Building2 className="h-5 w-5 text-primary-700 mb-2" />
-            <h4 className="text-xs font-bold text-gray-900">
-              {isDe ? "Sitz in Deutschland" : "German Registration"}
-            </h4>
-            <p className="text-[11px] text-gray-600 mt-0.5">
-              {isDe
-                ? "Weyhe, Deutschland – Registriert nach § 14 GewO."
-                : "Weyhe, Germany – Registered under § 14 GewO."}
-            </p>
-          </div>
-
+        {/* Bottom Assurance Cards */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
           <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:border-primary-200 transition-colors">
             <Globe className="h-5 w-5 text-primary-700 mb-2" />
             <h4 className="text-xs font-bold text-gray-900">

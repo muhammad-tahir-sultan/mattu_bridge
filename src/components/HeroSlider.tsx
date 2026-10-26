@@ -89,7 +89,7 @@ export default function HeroSlider() {
       primaryCtaLink: "/education",
       primaryCtaIcon: GraduationCap,
       primaryCtaStyle:
-        "btn-primary !py-3 !px-6 text-sm sm:text-base font-bold shadow-xl shadow-primary-900/40",
+        "btn-primary !py-2.5 !px-5 text-sm font-bold shadow-lg shadow-primary-900/40",
       secondaryCtaTextDe: "Schengen-Karte ansehen",
       secondaryCtaTextEn: "Explore Schengen Map",
       secondaryCtaLink: "#europe-map",
@@ -136,7 +136,7 @@ export default function HeroSlider() {
       primaryCtaLink: "/jobs",
       primaryCtaIcon: Briefcase,
       primaryCtaStyle:
-        "bg-gradient-to-r from-sky-600 to-primary-600 hover:from-sky-500 hover:to-primary-500 text-white !py-3 !px-6 text-sm sm:text-base font-bold shadow-xl shadow-sky-950/40 rounded-xl inline-flex items-center gap-2 transition-all",
+        "bg-gradient-to-r from-sky-600 to-primary-600 hover:from-sky-500 hover:to-primary-500 text-white !py-2.5 !px-5 text-sm font-bold shadow-lg shadow-sky-950/40 rounded-xl inline-flex items-center gap-2 transition-all",
       secondaryCtaTextDe: "Für Arbeitgeber",
       secondaryCtaTextEn: "Employer Inquiries",
       secondaryCtaLink: "/employer-inquiry",
@@ -183,7 +183,7 @@ export default function HeroSlider() {
       primaryCtaLink: "/events",
       primaryCtaIcon: Globe,
       primaryCtaStyle:
-        "bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-slate-950 !py-3 !px-6 text-sm sm:text-base font-bold shadow-xl shadow-amber-950/40 rounded-xl inline-flex items-center gap-2 transition-all",
+        "bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-slate-950 !py-2.5 !px-5 text-sm font-bold shadow-lg shadow-amber-950/40 rounded-xl inline-flex items-center gap-2 transition-all",
       secondaryCtaTextDe: "Kontakt & Partner",
       secondaryCtaTextEn: "Contact & Partners",
       secondaryCtaLink: "/contact",
@@ -286,31 +286,31 @@ export default function HeroSlider() {
             </div>
 
             {/* Main Content Layout for this Banner */}
-            <div className="relative z-10 w-full max-w-[98rem] mx-auto px-6 sm:px-12 lg:px-16 xl:px-20 py-14 sm:py-16 lg:py-20 xl:py-24">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-stretch min-h-[480px]">
+            <div className="relative z-10 w-full max-w-[104rem] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center justify-between">
                 {/* Left Column: Text & Actions */}
-                <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-between">
+                <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-between h-full">
                   <div>
                     {/* Pill Badge */}
                     <div
-                      className={`mb-4 inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-semibold backdrop-blur-md self-start ${slide.badgeColor}`}
+                      className={`mb-3.5 inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-semibold backdrop-blur-md self-start ${slide.badgeColor}`}
                     >
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                       <span>{isDe ? slide.badgeDe : slide.badgeEn}</span>
                     </div>
 
                     {/* Main Heading */}
-                    <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.15rem] xl:text-[3.55rem] font-bold leading-[1.14] tracking-tight text-white">
+                    <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[2.85rem] xl:text-[3.25rem] font-bold leading-[1.12] tracking-tight text-white">
                       {isDe ? slide.headingDe : slide.headingEn}
                     </h1>
 
                     {/* Supporting Text */}
-                    <p className="mt-5 text-base sm:text-lg md:text-xl leading-relaxed text-gray-200 max-w-3xl font-normal">
+                    <p className="mt-4 text-base sm:text-lg leading-relaxed text-gray-200 max-w-2xl font-normal">
                       {isDe ? slide.subtitleDe : slide.subtitleEn}
                     </p>
 
                     {/* Action Buttons */}
-                    <div className="mt-8 flex flex-wrap items-center gap-3">
+                    <div className="mt-6 flex flex-wrap items-center gap-3">
                       <Link href={slide.primaryCtaLink} className={slide.primaryCtaStyle}>
                         <slide.primaryCtaIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                         <span>{isDe ? slide.primaryCtaTextDe : slide.primaryCtaTextEn}</span>
@@ -318,7 +318,7 @@ export default function HeroSlider() {
 
                       <Link
                         href={slide.secondaryCtaLink}
-                        className="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10 !py-3 !px-6 text-sm sm:text-base font-semibold backdrop-blur-md inline-flex items-center gap-2"
+                        className="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10 !py-2.5 !px-5 text-sm sm:text-base font-semibold backdrop-blur-md inline-flex items-center gap-2"
                       >
                         <slide.secondaryCtaIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                         <span>{isDe ? slide.secondaryCtaTextDe : slide.secondaryCtaTextEn}</span>
@@ -326,7 +326,7 @@ export default function HeroSlider() {
 
                       <Link
                         href={slide.tertiaryCtaLink}
-                        className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-4 sm:px-5 py-3 text-sm sm:text-base font-semibold text-gray-300 hover:text-white hover:bg-white/10 transition-all backdrop-blur-md"
+                        className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold text-gray-300 hover:text-white hover:bg-white/10 transition-all backdrop-blur-md"
                       >
                         <slide.tertiaryCtaIcon className="h-4 w-4" />
                         <span>{isDe ? slide.tertiaryCtaTextDe : slide.tertiaryCtaTextEn}</span>
@@ -335,17 +335,12 @@ export default function HeroSlider() {
                   </div>
 
                   {/* 3 Trust Highlights Grid */}
-                  <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-white/15">
+                  <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 pt-5 border-t border-white/15">
                     <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md flex items-center gap-2.5">
                       <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                      <div>
-                        <p className="text-xs font-bold text-white">
-                          {isDe ? "Sitz in Deutschland" : "Based in Germany"}
-                        </p>
-                        <p className="text-[10.5px] text-gray-300">
-                          {isDe ? "Weyhe, Deutschland" : "Weyhe, Germany"}
-                        </p>
-                      </div>
+                      <p className="text-xs font-bold text-white">
+                        {isDe ? "Sitz in Deutschland" : "Based in Germany"}
+                      </p>
                     </div>
 
                     <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md flex items-center gap-2.5">
@@ -375,8 +370,8 @@ export default function HeroSlider() {
                 </div>
 
                 {/* Right Column: Featured Banner Photo Card */}
-                <div className="lg:col-span-5 xl:col-span-5 relative flex justify-center lg:justify-end mt-8 lg:mt-0 h-full">
-                  <div className="relative w-full h-full min-h-[480px] sm:min-h-[520px] lg:min-h-[560px] xl:min-h-[600px] rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-gray-900 group">
+                <div className="lg:col-span-5 xl:col-span-5 relative flex justify-center lg:justify-end mt-8 lg:mt-0 w-full">
+                  <div className="relative w-full h-[360px] sm:h-[400px] lg:h-[430px] xl:h-[450px] rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-gray-900 group">
                     <Image
                       src={slide.featuredImage}
                       alt={slide.featuredAlt}
@@ -416,31 +411,31 @@ export default function HeroSlider() {
         type="button"
         onClick={prevSlide}
         aria-label="Previous Banner"
-        className="absolute left-2 sm:left-4 lg:left-6 top-1/2 -translate-y-1/2 z-30 p-2.5 sm:p-3.5 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-md border border-white/20 shadow-2xl hover:scale-110 active:scale-95 transition-all group/btn"
+        className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-30 p-2 sm:p-2.5 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-md border border-white/20 shadow-xl hover:scale-110 active:scale-95 transition-all group/btn"
       >
-        <ChevronLeft className="h-5 w-5 sm:h-7 sm:w-7 transition-transform group-hover/btn:-translate-x-1" />
+        <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 transition-transform group-hover/btn:-translate-x-0.5" />
       </button>
 
       <button
         type="button"
         onClick={nextSlide}
         aria-label="Next Banner"
-        className="absolute right-2 sm:right-4 lg:right-6 top-1/2 -translate-y-1/2 z-30 p-2.5 sm:p-3.5 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-md border border-white/20 shadow-2xl hover:scale-110 active:scale-95 transition-all group/btn"
+        className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-30 p-2 sm:p-2.5 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-md border border-white/20 shadow-xl hover:scale-110 active:scale-95 transition-all group/btn"
       >
-        <ChevronRight className="h-5 w-5 sm:h-7 sm:w-7 transition-transform group-hover/btn:translate-x-1" />
+        <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 transition-transform group-hover/btn:translate-x-0.5" />
       </button>
 
       {/* 
         Bottom Horizontal Position Indicator Pointers 
       */}
-      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2.5 bg-slate-950/50 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15">
+      <div className="absolute bottom-2.5 sm:bottom-3.5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 bg-slate-950/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/15">
         {slides.map((slide, idx) => (
           <button
             key={slide.id}
             type="button"
             onClick={() => setCurrentSlide(idx)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              idx === currentSlide ? `w-8 ${slide.indicatorColor}` : "w-2 bg-white/40 hover:bg-white/70"
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              idx === currentSlide ? `w-7 ${slide.indicatorColor}` : "w-1.5 bg-white/40 hover:bg-white/70"
             }`}
             aria-label={`Go to banner ${idx + 1}`}
           />

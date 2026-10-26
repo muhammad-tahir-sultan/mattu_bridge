@@ -7,7 +7,6 @@ import {
   Briefcase,
   Globe,
   ArrowRight,
-  ShieldCheck,
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import DirectorMessage from "@/components/DirectorMessage";
@@ -174,96 +173,6 @@ export default function AboutContent() {
 
       {/* Director's Welcome Message */}
       <DirectorMessage />
-
-      {/* Why Mattu Bridge Section */}
-      <section className="section-padding bg-white border-b border-gray-100">
-        <div className="section-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:items-center">
-            <div className="relative">
-              <div className="relative h-[420px] rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src={images.campus}
-                  alt="European University and Business Campus"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/70 via-transparent to-transparent" />
-              </div>
-              <div className="absolute -bottom-6 -right-6 hidden sm:block rounded-2xl bg-white p-5 shadow-xl border border-gray-100 max-w-xs">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100 text-primary-700">
-                    <ShieldCheck className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-gray-900">
-                      {isDe ? "Strikte europäische Standards" : "Strict European Compliance"}
-                    </p>
-                    <p className="text-[11px] text-gray-500">
-                      {isDe
-                        ? "Ethische Kommunikation & DSGVO-Datenschutz."
-                        : "Ethical communication & GDPR privacy standards."}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <p className="heading-eyebrow mb-3">{t.home.whyChooseEyebrow}</p>
-              <h2 className="heading-2 mb-6">
-                {t.home.whyChooseTitle}
-              </h2>
-              <div className="space-y-4 text-base text-gray-700 leading-relaxed">
-                <p>
-                  {t.home.whyChooseSubtitle}
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                    <h4 className="font-semibold text-gray-900 text-sm mb-1">
-                      {t.home.whyPoint1Title}
-                    </h4>
-                    <p className="text-xs text-gray-600">
-                      {t.home.whyPoint1Desc}
-                    </p>
-                  </div>
-                  <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                    <h4 className="font-semibold text-gray-900 text-sm mb-1">
-                      {t.home.whyPoint2Title}
-                    </h4>
-                    <p className="text-xs text-gray-600">
-                      {t.home.whyPoint2Desc}
-                    </p>
-                  </div>
-                  <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                    <h4 className="font-semibold text-gray-900 text-sm mb-1">
-                      {t.home.whyPoint3Title}
-                    </h4>
-                    <p className="text-xs text-gray-600">
-                      {t.home.whyPoint3Desc}
-                    </p>
-                  </div>
-                  <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                    <h4 className="font-semibold text-gray-900 text-sm mb-1">
-                      {t.home.whyPoint4Title}
-                    </h4>
-                    <p className="text-xs text-gray-600">
-                      {t.home.whyPoint4Desc}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 flex gap-4">
-                <Link href="/contact" className="btn-primary !py-2.5 !px-5 text-sm">
-                  <span>{isDe ? "Direkten Kontakt aufnehmen" : "Contact Our Team"}</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Principles & Standards */}
       <section className="section-padding bg-gray-50/60">
