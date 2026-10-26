@@ -11,7 +11,7 @@ export const siteConfig = {
   domain: "https://mattubridge.de",
   tagline: "Connecting Education, Careers & International Opportunities",
   description:
-    "Mattu Bridge brings together educational consultancy, employment placement and recruitment, and international educational and social initiatives through one professional platform.",
+    "Mattu Bridge is a registered consultancy business in Germany, bringing together educational consultancy, employment placement and recruitment, and international educational and social initiatives through one professional platform. We connect people with opportunities and institutions through trust, collaboration, and equal opportunities.",
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61594515052924",
     tiktok: "https://www.tiktok.com/@mattu.bridge",
