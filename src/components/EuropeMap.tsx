@@ -23,7 +23,7 @@ export default function EuropeMap() {
   const [isLightboxOpen, setIsLightboxOpen] = useState<boolean>(false);
 
   return (
-    <section className="section-padding bg-slate-50/70 border-b border-gray-200">
+    <section id="europe-map" className="section-padding bg-slate-50/70 border-b border-gray-200 scroll-mt-20">
       <div className="section-container">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 pb-6 border-b border-gray-200 gap-4">

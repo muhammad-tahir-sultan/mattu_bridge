@@ -1,190 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import {
   GraduationCap,
   Briefcase,
   Globe,
   ArrowRight,
-  CheckCircle,
   Building,
   UserCheck,
-  ChevronRight,
 } from "lucide-react";
-import { images } from "@/data/images";
 import { useLanguage } from "@/context/LanguageContext";
 import EuropeMap from "@/components/EuropeMap";
+import HeroSlider from "@/components/HeroSlider";
 
 export default function HomePage() {
-  const { t, locale } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <div>
-      {/* 1. Hero Section */}
-      <section className="relative overflow-hidden bg-primary-950 text-white">
-        {/* Background Image with European Cityscape & Gradients */}
-        <div className="absolute inset-0">
-          <Image
-            src={images.frankfurtRiver}
-            alt="European Bridge and City Skyline"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover opacity-35"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-950/75 via-primary-950/70 to-primary-950" />
-        </div>
-
-        {/* Ambient Gradient Glow Orbs */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -right-24 top-20 h-96 w-96 rounded-full bg-primary-500/25 blur-3xl" />
-          <div className="absolute -left-24 bottom-10 h-96 w-96 rounded-full bg-accent-500/15 blur-3xl" />
-        </div>
-
-        <div className="relative z-10 w-full max-w-[98rem] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 lg:py-20 xl:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-stretch">
-            {/* Left Column: Text & Actions */}
-            <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-between">
-              <div>
-                {/* Pill Badge */}
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-primary-200 backdrop-blur-md self-start">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>{t.home.badge}</span>
-                </div>
-
-                {/* Main Heading */}
-                <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.65rem] font-bold leading-[1.12] tracking-tight text-white">
-                  {locale === "de" ? (
-                    <>
-                      Brücken bauen zu{" "}
-                      <span className="text-emerald-300">Bildung &</span>{" "}
-                      Chancen in Europa
-                    </>
-                  ) : (
-                    <>
-                      Building Bridges to{" "}
-                      <span className="text-emerald-300">Education &</span>{" "}
-                      Opportunities in Europe
-                    </>
-                  )}
-                </h1>
-
-                {/* Supporting Text */}
-                <p className="mt-5 text-base sm:text-lg md:text-xl leading-relaxed text-gray-200 max-w-4xl font-normal">
-                  {t.home.subtitle}
-                </p>
-
-                {/* Primary Action Buttons */}
-                <div className="mt-8 flex flex-wrap items-center gap-3">
-                  <Link href="/education" className="btn-primary !py-3 !px-6 text-sm sm:text-base font-bold shadow-xl shadow-primary-900/40">
-                    <GraduationCap className="h-4 w-4 sm:h-5 sm:w-5" />
-                    <span>{locale === "de" ? "Studienchancen entdecken" : "Explore Study Opportunities"}</span>
-                  </Link>
-                  <Link
-                    href="/jobs"
-                    className="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10 !py-3 !px-6 text-sm sm:text-base font-semibold"
-                  >
-                    <Briefcase className="h-4 w-4 sm:h-5 sm:w-5" />
-                    <span>{locale === "de" ? "Jobchancen finden" : "Find Job Opportunities"}</span>
-                  </Link>
-                  <Link
-                    href="/events"
-                    className="inline-flex items-center gap-2 rounded-lg border border-amber-400/40 bg-amber-500/10 px-4 sm:px-5 py-3 text-sm sm:text-base font-semibold text-amber-200 hover:bg-amber-500/20 transition-all"
-                  >
-                    <Globe className="h-4 w-4" />
-                    <span>{t.home.ctaEvents}</span>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Expansive Transparency & Trust Highlights Grid */}
-              <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-white/15">
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md flex items-center gap-2.5">
-                  <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                  <div>
-                    <p className="text-xs font-bold text-white">
-                      {locale === "de" ? "Sitz in Deutschland" : "Based in Germany"}
-                    </p>
-                    <p className="text-[10.5px] text-gray-300">
-                      {locale === "de" ? "Frankfurt am Main" : "Frankfurt am Main"}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md flex items-center gap-2.5">
-                  <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                  <div>
-                    <p className="text-xs font-bold text-white">
-                      {locale === "de" ? "6 europäische Ziele" : "6 European Hubs"}
-                    </p>
-                    <p className="text-[10.5px] text-gray-300">
-                      {locale === "de" ? "DE, PL, MT, ES, PT, HU" : "DE, PL, MT, ES, PT, HU"}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md flex items-center gap-2.5">
-                  <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                  <div>
-                    <p className="text-xs font-bold text-white">
-                      {locale === "de" ? "Verifizierte Chancen" : "Verified Pathways"}
-                    </p>
-                    <p className="text-[10.5px] text-gray-300">
-                      {locale === "de" ? "Studium & Arbeitsmarkt" : "Education & Careers"}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md flex items-center gap-2.5">
-                  <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                  <div>
-                    <p className="text-xs font-bold text-white">
-                      {locale === "de" ? "100% DSGVO-konform" : "100% GDPR Compliant"}
-                    </p>
-                    <p className="text-[10.5px] text-gray-300">
-                      {locale === "de" ? "Datensparsamkeit" : "Data Minimization"}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Hero Photo Composition - Tall & Matching Left Content Height */}
-            <div className="lg:col-span-5 xl:col-span-5 relative flex justify-center lg:justify-end mt-8 lg:mt-0 h-full">
-              <div className="relative w-full h-full min-h-[500px] sm:min-h-[540px] lg:min-h-[580px] xl:min-h-[620px] rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-gray-900 group">
-                <Image
-                  src={images.heroTeacher}
-                  alt="Education & Opportunities in Europe - Mattu Bridge"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 620px"
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/85 via-transparent to-transparent pointer-events-none" />
-
-                {/* Corner Badge */}
-                <div className="absolute top-4 right-4 rounded-full bg-primary-950/85 px-3.5 py-1.5 text-xs font-semibold text-emerald-300 backdrop-blur-md border border-white/15 shadow-lg">
-                  🎓 {locale === "de" ? "Bildung in Europa" : "Study in Europe"}
-                </div>
-
-                {/* Bottom Pathway Banner */}
-                <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-primary-950/85 p-4 backdrop-blur-md border border-white/15 shadow-xl flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <p className="text-xs font-semibold text-white">
-                      {locale === "de"
-                        ? "Zugelassene Bildungs- & Karriereprogramme in Europa"
-                        : "Recognised Educational & Career Pathways in Europe"}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </section>
+      {/* 1. Hero Section Slider with 3 Auto-Sliding Banners */}
+      <HeroSlider />
 
       {/* 2. The Three Principal Business Categories */}
       <section className="section-padding bg-gray-50/70 border-b border-gray-100">
