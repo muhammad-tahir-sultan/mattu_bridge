@@ -23,11 +23,10 @@ export default function Logo({
         aria-label="Mattu Bridge Home"
       >
         <div
-          className={`relative flex items-center justify-center overflow-hidden rounded-xl transition-all duration-200 ${
-            isDark
-              ? "bg-white p-2 shadow-md shadow-black/25 ring-1 ring-white/20"
-              : "bg-white p-1"
-          }`}
+          className={`relative flex items-center justify-center overflow-hidden rounded-xl transition-all duration-200 ${isDark
+            ? "bg-white p-2 shadow-md shadow-black/25 ring-1 ring-white/20"
+            : "bg-white p-1"
+            }`}
         >
           <Image
             src="/MB Logo.png"
@@ -51,11 +50,10 @@ export default function Logo({
         aria-label="Mattu Bridge Home"
       >
         <div
-          className={`relative flex items-center justify-center overflow-hidden rounded-xl transition-all duration-200 ${
-            isDark
-              ? "bg-white p-1.5 shadow-md shadow-black/25 ring-1 ring-white/20"
-              : "bg-white p-1 shadow-sm border border-gray-100"
-          }`}
+          className={`relative flex items-center justify-center overflow-hidden rounded-xl transition-all duration-200 ${isDark
+            ? "bg-white p-1.5 shadow-md shadow-black/25 ring-1 ring-white/20"
+            : "bg-white p-1 shadow-sm border border-gray-100"
+            }`}
         >
           <Image
             src="/mb-mark.png"
@@ -78,11 +76,10 @@ export default function Logo({
       aria-label="Mattu Bridge Home"
     >
       <div
-        className={`relative flex items-center justify-center flex-shrink-0 overflow-hidden rounded-xl transition-all duration-200 group-hover:scale-105 ${
-          isDark
-            ? "bg-white p-1.5 shadow-md shadow-black/25 ring-1 ring-white/20"
-            : "bg-white p-1 shadow-sm border border-gray-100/80"
-        }`}
+        className={`relative flex items-center justify-center flex-shrink-0 overflow-hidden rounded-xl transition-all duration-200 group-hover:scale-105 ${isDark
+          ? "bg-white p-1.5 shadow-md shadow-black/25 ring-1 ring-white/20"
+          : "bg-white p-1 shadow-sm border border-gray-100/80"
+          }`}
       >
         <Image
           src="/mb-mark.png"
@@ -95,19 +92,17 @@ export default function Logo({
       </div>
       <div className="flex flex-col leading-tight flex-shrink-0">
         <span
-          className={`font-display text-base sm:text-lg md:text-xl font-bold tracking-tight whitespace-nowrap transition-colors ${
-            isDark
-              ? "text-primary-300 group-hover:text-primary-100"
-              : "text-primary-800 group-hover:text-primary-600"
-          }`}
+          className={`font-display text-base sm:text-lg md:text-xl font-bold tracking-tight whitespace-nowrap transition-colors ${isDark
+            ? "text-white"
+            : "text-black "
+            }`}
         >
           Mattu Bridge
         </span>
         {showSubtitle && (
           <span
-            className={`text-[8px] sm:text-[9.5px] font-semibold uppercase tracking-wider whitespace-nowrap ${
-              isDark ? "text-primary-200" : "text-primary-700"
-            }`}
+            className={`text-[8px] sm:text-[9.5px] font-semibold uppercase tracking-wider whitespace-nowrap ${isDark ? "text-primary-200" : "text-primary-700"
+              }`}
           >
             Education &amp; Employment
           </span>
