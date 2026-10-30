@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Mattu Bridge",
+  siteName: "Mattu Bridge Consultancy",
   legalName: "Mattu Bridge",
   director: "IA Mattu",
   directorTitle: "Director, Mattu Bridge",
