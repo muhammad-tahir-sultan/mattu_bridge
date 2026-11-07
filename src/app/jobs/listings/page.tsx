@@ -223,7 +223,7 @@ export default function JobListingsPage() {
                   className="card flex flex-col justify-between hover:border-primary-300 transition-all"
                 >
                   <div>
-                    <div className="flex items-start justify-between gap-4 mb-2">
+                    <div className="flex items-start justify-between gap-4 mb-3">
                       <div>
                         <span className="inline-block rounded-md bg-primary-50 px-2.5 py-0.5 text-[11px] font-bold text-primary-700 uppercase tracking-wider mb-2">
                           {job.category}
@@ -234,18 +234,6 @@ export default function JobListingsPage() {
                       </div>
                       <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 border border-emerald-200">
                         {job.type}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
-                      <span className="flex items-center gap-1">
-                        <Building2 className="h-3.5 w-3.5" />
-                        {job.employer}
-                      </span>
-                      <span>·</span>
-                      <span className="flex items-center gap-1">
-                        <MapPin className="h-3.5 w-3.5" />
-                        {job.location} ({job.country})
                       </span>
                     </div>
 
@@ -350,12 +338,18 @@ export default function JobListingsPage() {
             <h2 className="font-display text-2xl font-bold text-gray-950">
               {selectedJob.title}
             </h2>
-            <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-gray-600">
-              <span>{selectedJob.employer}</span>
-              <span>·</span>
-              <span>{selectedJob.location} ({selectedJob.country})</span>
-              <span>·</span>
-              <span className="font-semibold text-emerald-700">{selectedJob.type}</span>
+            <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
+              <span className="inline-flex items-center gap-1.5 font-medium text-gray-700 bg-gray-100 px-3 py-1 rounded-full">
+                <Building2 className="h-3.5 w-3.5 text-primary-600" />
+                <span>{selectedJob.employer}</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 font-medium text-gray-700 bg-gray-100 px-3 py-1 rounded-full">
+                <MapPin className="h-3.5 w-3.5 text-primary-600" />
+                <span>{selectedJob.location} ({selectedJob.country})</span>
+              </span>
+              <span className="inline-flex items-center font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+                {selectedJob.type}
+              </span>
             </div>
 
             {selectedJob.salaryRange && (
