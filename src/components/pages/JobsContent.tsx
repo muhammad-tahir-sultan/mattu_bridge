@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   UserCheck,
@@ -20,13 +20,38 @@ import {
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import { images } from "@/data/images";
-import { initialJobListings, JobListing } from "@/data/jobsData";
+import { JobListing } from "@/data/jobsData";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function JobsContent() {
   const { t, locale } = useLanguage();
   const isDe = locale === "de";
   const [selectedJob, setSelectedJob] = useState<JobListing | null>(null);
+  const [jobs, setJobs] = useState<JobListing[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    let isMounted = true;
+    async function fetchJobs() {
+      try {
+        const res = await fetch("/api/jobs");
+        const data = await res.json();
+        const rawList = data.jobs || data.data;
+        if (data.success && Array.isArray(rawList) && isMounted) {
+          setJobs(rawList.map((j: any) => ({ ...j, id: j.id || j._id })));
+          setIsLoading(false);
+          return;
+        }
+      } catch (err) {
+        console.warn("Could not fetch jobs from MongoDB API:", err);
+      }
+      if (isMounted) setIsLoading(false);
+    }
+    fetchJobs();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const sectors = isDe
     ? [
@@ -270,61 +295,74 @@ export default function JobsContent() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {initialJobListings.map((job) => (
-              <div key={job.id} className="card flex flex-col justify-between">
-                <div>
-                  <div className="flex items-start justify-between gap-4 mb-3">
-                    <div>
-                      <span className="inline-block rounded-md bg-primary-100 px-2.5 py-1 text-xs font-semibold text-primary-800 mb-2">
-                        {job.category}
+          {isLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[1, 2, 3].map((n) => (
+                <div key={n} className="card animate-pulse space-y-4 p-6">
+                  <div className="h-4 bg-gray-200 rounded w-1/4" />
+                  <div className="h-6 bg-gray-200 rounded w-3/4" />
+                  <div className="h-16 bg-gray-100 rounded w-full" />
+                  <div className="h-8 bg-gray-200 rounded w-1/2" />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {jobs.map((job) => (
+                <div key={job.id} className="card flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <div>
+                        <span className="inline-block rounded-md bg-primary-100 px-2.5 py-1 text-xs font-semibold text-primary-800 mb-2">
+                          {job.category}
+                        </span>
+                        <h3 className="font-display text-xl font-bold text-gray-900">
+                          {job.title}
+                        </h3>
+                      </div>
+                      <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 border border-emerald-200">
+                        {job.type}
                       </span>
-                      <h3 className="font-display text-xl font-bold text-gray-900">
-                        {job.title}
-                      </h3>
                     </div>
-                    <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 border border-emerald-200">
-                      {job.type}
-                    </span>
-                  </div>
 
-                  <p className="text-sm text-gray-600 line-clamp-2 mt-2">
-                    {job.description}
-                  </p>
-
-                  {job.salaryRange && (
-                    <p className="mt-3 text-xs font-semibold text-gray-900">
-                      {isDe ? "Vergütung:" : "Compensation:"} {job.salaryRange}
+                    <p className="text-sm text-gray-600 line-clamp-2 mt-2">
+                      {job.description}
                     </p>
-                  )}
-                </div>
 
-                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-                  <span className="text-xs text-gray-400">
-                    {isDe ? "Veröffentlicht:" : "Posted:"} {job.datePosted}
-                  </span>
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedJob(job)}
-                      className="btn-secondary !py-2 !px-3 text-xs font-semibold"
-                    >
-                      {isDe ? "Details" : "View Details"}
-                    </button>
-                    <Link
-                      href={`/jobs/job-seeker-registration?jobRef=${job.id}&jobTitle=${encodeURIComponent(
-                        job.title
-                      )}`}
-                      className="btn-primary !py-2 !px-3 text-xs font-bold"
-                    >
-                      <span>{isDe ? "Bewerben" : "Apply Now"}</span>
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
+                    {job.salaryRange && (
+                      <p className="mt-3 text-xs font-semibold text-gray-900">
+                        {isDe ? "Vergütung:" : "Compensation:"} {job.salaryRange}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span className="text-xs text-gray-400">
+                      {isDe ? "Veröffentlicht:" : "Posted:"} {job.datePosted}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setSelectedJob(job)}
+                        className="btn-secondary !py-2 !px-3 text-xs font-semibold"
+                      >
+                        {isDe ? "Details" : "View Details"}
+                      </button>
+                      <Link
+                        href={`/jobs/job-seeker-registration?jobRef=${job.id}&jobTitle=${encodeURIComponent(
+                          job.title
+                        )}`}
+                        className="btn-primary !py-2 !px-3 text-xs font-bold"
+                      >
+                        <span>{isDe ? "Bewerben" : "Apply Now"}</span>
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

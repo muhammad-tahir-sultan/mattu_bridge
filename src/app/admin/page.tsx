@@ -38,7 +38,7 @@ import {
 import PageHeader from "@/components/PageHeader";
 import Logo from "@/components/Logo";
 import { images } from "@/data/images";
-import { initialJobListings, JobListing } from "@/data/jobsData";
+import { JobListing } from "@/data/jobsData";
 
 export default function AdminPage() {
   // Authentication State
@@ -62,7 +62,7 @@ export default function AdminPage() {
   const [studentEnquiries, setStudentEnquiries] = useState<any[]>([]);
   const [jobSeekers, setJobSeekers] = useState<any[]>([]);
   const [employerSubmissions, setEmployerSubmissions] = useState<any[]>([]);
-  const [jobListings, setJobListings] = useState<JobListing[]>(initialJobListings);
+  const [jobListings, setJobListings] = useState<JobListing[]>([]);
   const [contactMessages, setContactMessages] = useState<any[]>([]);
   const [selectedItem, setSelectedItem] = useState<any | null>(null);
 
@@ -188,23 +188,17 @@ export default function AdminPage() {
     try {
       const res = await fetch("/api/jobs?all=true");
       const data = await res.json();
-      if (data.success && Array.isArray(data.jobs) && data.jobs.length > 0) {
-        const formatted = data.jobs.map((j: any) => ({ ...j, id: j.id || j._id }));
-        const existingIds = new Set(formatted.map((j: any) => j.id));
-        setJobListings([...formatted, ...initialJobListings.filter((j) => !existingIds.has(j.id))]);
+      const rawList = data.jobs || data.data;
+      if (data.success && Array.isArray(rawList)) {
+        const formatted = rawList.map((j: any) => ({ ...j, id: j.id || j._id }));
+        setJobListings(formatted);
       } else {
         const pendingJobs = JSON.parse(localStorage.getItem("mattu_pending_jobs") || "[]");
-        if (pendingJobs.length > 0) {
-          setJobListings([...pendingJobs, ...initialJobListings]);
-        } else {
-          setJobListings(initialJobListings);
-        }
+        setJobListings(pendingJobs);
       }
     } catch {
       const pendingJobs = JSON.parse(localStorage.getItem("mattu_pending_jobs") || "[]");
-      if (pendingJobs.length > 0) {
-        setJobListings([...pendingJobs, ...initialJobListings]);
-      }
+      setJobListings(pendingJobs);
     }
   };
 
