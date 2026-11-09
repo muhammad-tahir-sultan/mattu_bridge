@@ -78,8 +78,8 @@ export default function EuropeMap() {
                 <Compass className="h-4 w-4 text-primary-700" />
                 <span>
                   {isDe
-                    ? "Offizielle europäische Schengen- & Länderkarte (Vektorgrafik)"
-                    : "Official European & Schengen Mobility Map (Vector Design)"}
+                    ? "Offizielle europäische Schengen- & Länderkarte"
+                    : "Official European & Schengen Mobility Map"}
                 </span>
               </div>
               <div className="flex flex-wrap items-center gap-2 text-[10.5px]">
@@ -102,11 +102,11 @@ export default function EuropeMap() {
               </div>
             </div>
 
-            {/* The Authentic 100% Vector Schengen Map Container */}
-            <div className="relative w-full aspect-[480/475] max-h-[820px] rounded-2xl overflow-hidden bg-[#eaf4fd] border border-sky-200/70 select-none shadow-inner mx-auto">
+            {/* The Authentic European Schengen Map Container */}
+            <div className="relative w-full aspect-[1536/1024] max-h-[820px] rounded-2xl overflow-hidden bg-slate-900/5 border border-sky-200/70 select-none shadow-inner mx-auto">
               <Image
-                src="/images/schengen-europe-vector.svg"
-                alt="Original Vector Map of Schengen and European Countries - Mattu Bridge"
+                src="/images/WhatsApp Image 2026-11-08 at 3.42.02 AM.jpeg"
+                alt="European Schengen and European Union Mobility Map - Mattu Bridge"
                 fill
                 sizes="(max-width: 1024px) 100vw, 920px"
                 className="object-contain"
@@ -190,8 +190,8 @@ export default function EuropeMap() {
                 <Compass className="h-5 w-5 text-primary-700" />
                 <h3 className="font-bold text-base text-gray-900">
                   {isDe
-                    ? "Europäische Schengen- & Mobilitätskarte (Original Vektor)"
-                    : "European Schengen & Mobility Geographic Map (Original Vector)"}
+                    ? "Europäische Schengen- & Mobilitätskarte"
+                    : "European Schengen & Mobility Geographic Map"}
                 </h3>
               </div>
               <button
@@ -204,10 +204,10 @@ export default function EuropeMap() {
               </button>
             </div>
 
-            <div className="relative flex-1 min-h-[450px] sm:min-h-[580px] w-full rounded-2xl overflow-hidden bg-[#eaf4fd]">
+            <div className="relative flex-1 min-h-[450px] sm:min-h-[580px] w-full rounded-2xl overflow-hidden bg-slate-900/5">
               <Image
-                src="/images/schengen-europe-vector.svg"
-                alt="Schengen European Countries Geographic Vector Map - Full View"
+                src="/images/WhatsApp Image 2026-11-08 at 3.42.02 AM.jpeg"
+                alt="Schengen European Countries Geographic Map - Full View"
                 fill
                 sizes="(max-width: 1024px) 100vw, 850px"
                 className="object-contain"

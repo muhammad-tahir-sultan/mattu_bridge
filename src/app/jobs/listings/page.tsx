@@ -11,7 +11,7 @@ import {
   X,
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
-import { initialJobListings, jobCategories, employmentCountries, JobListing } from "@/data/jobsData";
+import { jobCategories, employmentCountries, JobListing } from "@/data/jobsData";
 import { images } from "@/data/images";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -23,43 +23,35 @@ export default function JobListingsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [selectedCountry, setSelectedCountry] = useState("All Countries");
   const [selectedType, setSelectedType] = useState("All Types");
-  const [allJobs, setAllJobs] = useState<JobListing[]>(initialJobListings);
+  const [allJobs, setAllJobs] = useState<JobListing[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedJob, setSelectedJob] = useState<JobListing | null>(null);
 
-  // Load approved jobs from MongoDB API with localStorage fallback
+  // Load approved jobs directly from MongoDB API
   useEffect(() => {
     let isMounted = true;
     async function fetchJobs() {
       try {
         const res = await fetch("/api/jobs");
         const data = await res.json();
-        if (data.success && Array.isArray(data.jobs) && data.jobs.length > 0) {
+        const rawList = data.jobs || data.data;
+        if (data.success && Array.isArray(rawList)) {
           if (isMounted) {
-            const formatted = data.jobs.map((j: any) => ({
+            const formatted = rawList.map((j: any) => ({
               ...j,
               id: j.id || j._id,
             }));
-            const existingIds = new Set(formatted.map((j: any) => j.id));
-            const merged = [...formatted, ...initialJobListings.filter((j) => !existingIds.has(j.id))];
-            setAllJobs(merged);
+            setAllJobs(formatted);
+            setIsLoading(false);
             return;
           }
         }
       } catch (err) {
-        console.warn("Could not fetch jobs from MongoDB API, using local storage fallback:", err);
+        console.warn("Could not fetch jobs from MongoDB API:", err);
       }
 
-      // Fallback to localStorage
-      try {
-        const storedPending = JSON.parse(
-          localStorage.getItem("mattu_pending_jobs") || "[]"
-        );
-        const approvedOnly = storedPending.filter((j: JobListing) => j.isApproved);
-        if (approvedOnly.length > 0 && isMounted) {
-          setAllJobs([...approvedOnly, ...initialJobListings]);
-        }
-      } catch {
-        // fallback to initial
+      if (isMounted) {
+        setIsLoading(false);
       }
     }
 
@@ -215,7 +207,18 @@ export default function JobListingsPage() {
           </div>
 
           {/* Job Listings Grid */}
-          {filteredJobs.length > 0 ? (
+          {isLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[1, 2, 3, 4].map((n) => (
+                <div key={n} className="card animate-pulse space-y-4 p-6">
+                  <div className="h-4 bg-gray-200 rounded w-1/4" />
+                  <div className="h-6 bg-gray-200 rounded w-3/4" />
+                  <div className="h-16 bg-gray-100 rounded w-full" />
+                  <div className="h-8 bg-gray-200 rounded w-1/2" />
+                </div>
+              ))}
+            </div>
+          ) : filteredJobs.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {filteredJobs.map((job) => (
                 <div
